@@ -1,0 +1,257 @@
+{
+  "namespaces": [
+    {
+      "name": "DFD Group Team Folder",
+      "namespace_id": "11459578707",
+      "namespace_type": {
+        ".tag": "team_folder"
+      }
+    },
+    {
+      "name": "Лазар",
+      "namespace_id": "11487630163",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "Счетоводство",
+      "namespace_id": "11455712931",
+      "namespace_type": {
+        ".tag": "team_folder"
+      }
+    },
+    {
+      "name": "Фактури за зареждане",
+      "namespace_id": "11453335555",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "Месечно осчетоводяване 2024",
+      "namespace_id": "11467461987",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "Справки",
+      "namespace_id": "11470786307",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "Фактури за зареждане",
+      "namespace_id": "11468310419",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "Мениджърски справки",
+      "namespace_id": "11527491667",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "Разходи за труд и осигуровки",
+      "namespace_id": "11568157123",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "ДА СЕ ДИСКУТИРА КЪДЕ ДА СЕ РАЗПРЕДЕЛЯТ 012025",
+      "namespace_id": "11657264963",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "Мениджмънт (ЕД?)",
+      "namespace_id": "11519020515",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "Разходи за труд и осигуровки",
+      "namespace_id": "11517614067",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "Разходи за труд и осигуровки",
+      "namespace_id": "11515319651",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "Мениджмънт (ЕД?)",
+      "namespace_id": "11519413555",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "Разходи за труд и осигуровки",
+      "namespace_id": "11545283155",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "Джоди Трейд",
+      "namespace_id": "11521740259",
+      "namespace_type": {
+        ".tag": "team_folder"
+      }
+    },
+    {
+      "name": "Root",
+      "namespace_id": "11454272339",
+      "namespace_type": {
+        ".tag": "team_member_folder"
+      },
+      "team_member_id": "dbmid:AACKgQ6CS0g05be-fXsvf_QwwdvcHUDDB94"
+    },
+    {
+      "name": "office@dfd-group.com - TMR",
+      "namespace_id": "11450861955",
+      "namespace_type": {
+        ".tag": "team_member_root"
+      },
+      "team_member_id": "dbmid:AACKgQ6CS0g05be-fXsvf_QwwdvcHUDDB94"
+    },
+    {
+      "name": "Фактури 2024",
+      "namespace_id": "11524718851",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "Материали-Наем-Джоди Трейд",
+      "namespace_id": "841204906",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "Кино Арена Монтаж",
+      "namespace_id": "840964385",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "Продукти-2015",
+      "namespace_id": "826239046",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "Първи в Google",
+      "namespace_id": "840964024",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "Изрязани Видеа и снимки",
+      "namespace_id": "838584619",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "Задачи",
+      "namespace_id": "1006116384",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "Root",
+      "namespace_id": "795245069",
+      "namespace_type": {
+        ".tag": "team_member_folder"
+      },
+      "team_member_id": "dbmid:AACxr6fgraJerUX1K6M0BM0IIvpUDBMUZMA"
+    },
+    {
+      "name": "12.Website plan & Documents",
+      "namespace_id": "7436208416",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "drawio",
+      "namespace_id": "8631935824",
+      "namespace_type": {
+        ".tag": "app_folder"
+      },
+      "team_member_id": "dbmid:AACxr6fgraJerUX1K6M0BM0IIvpUDBMUZMA"
+    },
+    {
+      "name": "LAYALT",
+      "namespace_id": "9723121712",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "Финални чертежи",
+      "namespace_id": "1992405507",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "Barrier TP Guinot 23102024",
+      "namespace_id": "11842246961",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "Детайли за лазерно рязане",
+      "namespace_id": "11942760081",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    },
+    {
+      "name": "DFD Orders",
+      "namespace_id": "11322244579",
+      "namespace_type": {
+        ".tag": "app_folder"
+      },
+      "team_member_id": "dbmid:AACxr6fgraJerUX1K6M0BM0IIvpUDBMUZMA"
+    },
+    {
+      "name": "DFD Group BG203764329 - TMR",
+      "namespace_id": "11454977171",
+      "namespace_type": {
+        ".tag": "team_member_root"
+      },
+      "team_member_id": "dbmid:AACxr6fgraJerUX1K6M0BM0IIvpUDBMUZMA"
+    },
+    {
+      "name": "Replay Project",
+      "namespace_id": "11449531395",
+      "namespace_type": {
+        ".tag": "shared_folder"
+      }
+    }
+  ],
+  "cursor": "AADvvHAZ_mG2AvbcxaLrHxlE7lTAM-mzRq05bi5Vu7MUWrZhC_Q63-mUXT9GXjXYzNM28Wnr9cpCSNg97eDxmrunBtnIsZ6DbRXsXobXGvrKOO5JqK-MbahvYsQDLK3L441XAqGqPUu6ky7fD1O9JhIqIiEOBmrtOxarSH9gJkcZj0hQiH-i3htLajuMHQ8y2Mrd7AgWz5dmNcZzA3pcYuqYOSt7Q-vKLL9-WWVDwahUmSJ3wzEQ-QP3UhL-4t-dsSsX2ihHlelkp_MMAAsvHOdW5P_7LNVu7X9EoaiN8XmtXVqTOnMh1rZN_tRoqR-GpygQxv0oExZEW0-gXVz03TdH",
+  "has_more": false
+}

@@ -1,0 +1,190 @@
+{
+  "line_items": [
+    {
+      "item_id": "126938000000050117",
+      "line_item_id": "126938000004264012",
+      "salesorder_item_id": "",
+      "image_document_id": "126938000000303005",
+      "sku": "06-PLR-1",
+      "account_id": "126938000000000509",
+      "account_name": "Cost of Goods Sold",
+      "name": "PLATINE DE FIXATION RENFORCEE POUR SUPPORT 80 x 40 mm",
+      "description": "Подсилена квадратна монтажна планка с тръба\nпо чертеж 06-PLR-1-DFD \nПокритие: горещ цинк",
+      "item_order": 1,
+      "is_receivable": true,
+      "bcy_rate": 49.69,
+      "pricebook_id": "",
+      "header_id": "",
+      "header_name": "",
+      "rate": 49.69,
+      "quantity": 140,
+      "package_details": {
+        "length": "",
+        "width": "",
+        "height": "",
+        "weight": "",
+        "weight_unit": "kg",
+        "dimension_unit": "cm"
+      },
+      "discount": 0.0,
+      "discounts": [],
+      "quantity_received": 0,
+      "quantity_marked_as_received": 0,
+      "quantity_intransit": 0,
+      "quantity_cancelled": 0,
+      "quantity_billed": 0,
+      "unit": "pcs",
+      "item_total": 6956.6,
+      "tax_id": "",
+      "tax_name": "",
+      "tax_type": "tax",
+      "tax_percentage": 0,
+      "item_type": "sales_and_purchases",
+      "line_item_taxes": [],
+      "tags": [],
+      "item_custom_fields": [
+        {
+          "field_id": "126938000000077045",
+          "customfield_id": "126938000000077045",
+          "show_in_store": false,
+          "show_in_portal": false,
+          "is_active": true,
+          "index": 1,
+          "label": "Ordered on",
+          "show_on_pdf": true,
+          "edit_on_portal": false,
+          "edit_on_store": false,
+          "api_name": "cf_ordered_on",
+          "show_in_all_pdf": true,
+          "value_formatted": "12.08.2025",
+          "search_entity": "item",
+          "data_type": "date",
+          "placeholder": "cf_ordered_on",
+          "value": "2025-08-12",
+          "is_dependent_field": false
+        }
+      ],
+      "project_id": "",
+      "image_name": "06-PLR-1-1.jpg",
+      "image_type": "jpg",
+      "purchase_request_items": [],
+      "is_combo_product": false
+    },
+    {
+      "item_id": "126938000002539001",
+      "line_item_id": "126938000004430037",
+      "salesorder_item_id": "",
+      "image_document_id": "",
+      "sku": "CONSTRUCTEL-02-BTP-25-PPL-3001-001",
+      "account_id": "126938000000000509",
+      "account_name": "Cost of Goods Sold",
+      "name": "Barrier D25 | 5 NRST | LP 245x95 CONSTRUCTEL | RAL 3001",
+      "description": "Бар. ø25x1, \n5 НРС (15 см.), RAL 3001,\nЛП 245x95 \"CONSTRUCTEL\"",
+      "item_order": 2,
+      "is_receivable": true,
+      "bcy_rate": 31.215047,
+      "pricebook_id": "",
+      "header_id": "",
+      "header_name": "",
+      "rate": 31.215047,
+      "quantity": 425,
+      "package_details": {
+        "length": "",
+        "width": "",
+        "height": "",
+        "weight": 7.2,
+        "weight_unit": "kg",
+        "dimension_unit": "cm"
+      },
+      "discount": 0.0,
+      "discounts": [],
+      "quantity_received": 0,
+      "quantity_marked_as_received": 0,
+      "quantity_intransit": 0,
+      "quantity_cancelled": 0,
+      "quantity_billed": 0,
+      "unit": "pcs",
+      "item_total": 13266.39,
+      "tax_id": "",
+      "tax_name": "",
+      "tax_type": "tax",
+      "tax_percentage": 0,
+      "item_type": "sales_and_purchases",
+      "line_item_taxes": [],
+      "tags": [],
+      "item_custom_fields": [
+        {
+          "field_id": "126938000000077059",
+          "customfield_id": "126938000000077059",
+          "show_in_store": false,
+          "show_in_portal": false,
+          "is_active": true,
+          "index": 1,
+          "label": "Packaging",
+          "show_on_pdf": true,
+          "edit_on_portal": false,
+          "edit_on_store": false,
+          "api_name": "cf_packaging",
+          "show_in_all_pdf": true,
+          "value_formatted": "4x95 + 1x45",
+          "search_entity": "item",
+          "data_type": "string",
+          "placeholder": "cf_packaging",
+          "value": "4x95 + 1x45",
+          "is_dependent_field": false
+        },
+        {
+          "field_id": "126938000000077045",
+          "customfield_id": "126938000000077045",
+          "show_in_store": false,
+          "show_in_portal": false,
+          "is_active": true,
+          "index": 2,
+          "label": "Ordered on",
+          "show_on_pdf": true,
+          "edit_on_portal": false,
+          "edit_on_store": false,
+          "api_name": "cf_ordered_on",
+          "show_in_all_pdf": true,
+          "value_formatted": "01.09.2025",
+          "search_entity": "item",
+          "data_type": "date",
+          "placeholder": "cf_ordered_on",
+          "value": "2025-09-01",
+          "is_dependent_field": false
+        }
+      ],
+      "project_id": "",
+      "image_name": "",
+      "image_type": "",
+      "purchase_request_items": [],
+      "is_combo_product": false
+    },
+    {
+      "item_id": "126938000002539001",
+      "name": "Barrier D25 | 5 NRST | LP 245x95 CONSTRUCTEL | RAL 3001",
+      "description": "Бар. ø25x1, \n5 НРС (15 см.), RAL 3001,\nЛП 245x95 \"CONSTRUCTEL\"",
+      "quantity": 425,
+      "item_custom_fields": [
+        {
+          "api_name": "cf_packaging",
+          "value": "4x95 + 1x45"
+        },
+        {
+          "api_name": "cf_ordered_on",
+          "value": "2025-09-01"
+        }
+      ]
+    }
+  ],
+  "custom_fields": [
+    {
+      "api_name": "cf_026863",
+      "value": "Допълнение към поръчка"
+    },
+    {
+      "api_name": "cf_628744",
+      "value": "Отворена поръчка (4.5л.м.)"
+    }
+  ]
+}

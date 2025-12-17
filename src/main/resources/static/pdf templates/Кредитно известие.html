@@ -1,0 +1,150 @@
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+<style type="text/css" media="all"> #lineItem tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+} </style>
+<div style="font-family: &quot;Open Sans&quot;; color: rgb(51, 51, 51);">
+    <div style="padding: 0px 0.20n 0px 0.20in;">
+        <div style="display: table; width: 100%;">
+            <div style="font-size: 10pt; float: left; width: 50%;">
+                <div> %ScaledLogoImage%</div>
+                <b>ДЖОДИ ТРЕЙД ООД</b><br>
+                <div><span id="tmp_org_address" style="white-space: pre-wrap;">гр. София, ул. Крум Кюлявков<br>ЕИК: 175 064 384<br>BG 175 064 384             </span>
+                </div>
+            </div>
+            <div style="float: right; width: 50%; text-align: right;"><span style="color: rgb(0, 0, 0);"><font size="5">КРЕДИТНО ИЗВЕСТИЕ</font></span><br><span
+                    style="font-size: 10pt; color: rgb(129, 125, 125);" id="tmp_entity_number"><b>%CN_Number%</b></span>
+                <div style="font-size: 10pt; clear: both; margin-top: 20px;"><br></div>
+            </div>
+        </div>
+        <table style="font-size: 10pt; width: 100%; margin-top: 30px; table-layout: fixed; border-spacing: 0px; border-collapse: collapse;">
+            <tbody>
+            <tr>
+                <td style="width:50%;vertical-align:bottom;word-wrap: break-word;">
+                    <div><label id="tmp_billing_address_label"
+                                style="font-size: 10pt;color: #817d7d;">Получател:</label><br><strong
+                            style="font-family: Calibri; text-align: right;">${contact.cf_bg_name}</strong><br> <span
+                            id="tmp_billing_address" style="white-space: pre-wrap;">${contact.cf_bg_address}<br>${contact.cf_bg_country}<br>${contact.cf_tva}</span>
+                    </div>
+                </td>
+                <td align="right" style="vertical-align:bottom;word-wrap: break-word;">
+                    <table width="344" height="96" cellspacing="0" cellpadding="0" border="0"
+                           style="table-layout: fixed; word-wrap: break-word;border-spacing: 0;border-collapse: collapse;">
+                        <tbody>
+                        <tr>
+                            <td style="padding:5px 10px 5px 0px;font-size:10pt;text-align:right;"><span
+                                    style="color: #817d7d;">Дата :</span></td>
+                            <td style="text-align:right;">%CN_Date%</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px 10px 5px 0px;font-size: 10pt;text-align:right;"><span
+                                    style="color: #817d7d;">По фактура :</span></td>
+                            <td style="text-align:right;"><span id="tmp_ref_number">%CN_Reference%</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div style="font-size: 10pt; margin-top: 20px; width: 100%;"><span></span></div>
+        <style media="all" type="text/css">#lineItem tr {
+            page-break-inside: avoid;
+            page-break-after: auto
+        }</style>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <table style="width: 100%; margin-top: 20px; table-layout: fixed; border-spacing: 0px; border-collapse: collapse; height: 52px;"
+               class="pcs-itemtable" cellspacing="0" cellpadding="0" border="0">
+            <thead>
+            <tr style="height: 32px;">
+                <td style="font-size: 10pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px; overflow-wrap: break-word; width: 4.21116%; height: 21px; text-align: center;">
+                    <span style="font-family: Calibri;">№</span></td>
+                <td style="font-size: 10pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px; overflow-wrap: break-word; width: 14.8429%; height: 21px; text-align: center;">
+                    <span style="font-family: Calibri;">Код</span></td>
+                <td style="font-size: 10pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px; overflow-wrap: break-word; width: 40.3175%; height: 21px; text-align: center;">
+                    <span style="font-family: Calibri;">Описание</span></td>
+                <td style="font-size: 10pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px 5px 5px; overflow-wrap: break-word; width: 10.846%; height: 21px;"
+                    align="center"><span style="font-family: Calibri;">К-во<br></span></td>
+                <td style="font-size: 10pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px 5px 5px; overflow-wrap: break-word; width: 11.6163%; height: 21px;"
+                    align="center"><span style="font-family: Calibri;">Ед. цена</span></td>
+                <td style="font-size: 10pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px 5px 5px; overflow-wrap: break-word; width: 12.6493%; height: 21px;"
+                    align="center"><span style="font-family: Calibri;">Стойност</span></td>
+            </tr>
+            </thead>
+            <tbody id="lineitem">
+            <tr style="height: 31px;">
+                <td style="font-size: 9pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 0px 10px 10px; width: 4.21116%; height: 31px;">
+                    <span style="font-family: Calibri;">&nbsp;<span style="font-size: 12px;"><span
+                            class="siq-user-message">%SiNo%</span></span></span></td>
+                <td style="font-size: 9pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 0px 10px 10px; width: 14.8429%; height: 31px;"
+                    align="left"><span style="font-family: Calibri;">%MPN%</span></td>
+                <td style="font-size: 9pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 0px 10px 10px; width: 40.3175%; height: 31px;"
+                    valign="top"> ${CREDIT NOTE.Item.CF.BG-description.Value}
+                </td>
+                <td style="font-size: 9pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 10px 5px; overflow-wrap: break-word; width: 10.846%; height: 31px;"
+                    valign="top" align="center"><span style="font-family: Calibri;"><span
+                        id="tmp_item_qty">%ItemQty%</span></span></td>
+                <td style="font-size: 9pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 10px 5px; overflow-wrap: break-word; width: 11.6163%; height: 31px;"
+                    valign="top" align="center">${CREDIT NOTE.Item.CF.bg-price.Value}
+                </td>
+                <td style="font-size: 9pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 10px 10px 5px; overflow-wrap: break-word; width: 12.6493%; height: 31px;"
+                    valign="top" align="center">${CREDIT NOTE.Item.CF.Sum qy*price.Value}
+                </td>
+            </tr>
+            </tbody>
+            <tbody id="headerItem"></tbody>
+        </table>
+        <div style="width: 100%; margin-top: 1px;">
+            <div style="width: 45%; padding: 3px 10px 3px 3px; font-size: 9pt; float: left;">
+                <div style="white-space: pre-wrap;"><span style="font-family: Calibri;">&nbsp;</span></div>
+            </div>
+            <div style="width: 50%; float: right;">
+                <table style="font-size: 9pt; color: #000000; background-color: #ffffff; border-spacing: 0px; border-collapse: collapse; height: 20px; width: 100%;"
+                       width="100%" cellspacing="0" border="0">
+                    <tbody>
+                    <tr style="height: 10px;">
+                        <td style="padding: 5px 10px 5px 0px; height: 10px; width: 44.7674%;" valign="middle"
+                            align="right"><span style="font-family: Calibri;"><strong>Общо:</strong></span></td>
+                        <td style="width: 54.6512%; padding: 10px 10px 10px 5px; height: 10px;" id="tmp_subtotal"
+                            valign="middle" align="right"><strong><font
+                                face="Calibri">${creditnote.cf_4daa41}&nbsp;лв. </font><br></strong></td>
+                    </tr>
+                    <tr style="height: 10px;">
+                        <td style="padding: 5px 10px 5px 0px; height: 10px; width: 44.7674%;" valign="middle"
+                            align="right"><span style="font-family: Calibri;">${contact.cf_tax}</span></td>
+                        <td style="width: 54.6512%; padding: 10px 10px 10px 5px; height: 10px;" valign="middle"
+                            align="right"><font face="Calibri">${creditnote.cf_7a3497}&nbsp;лв. </font><br></td>
+                    </tr>
+                    <tr style="height: 20px; background-color: #f5f4f3; font-size: 9pt; color: #000000;">
+                        <td style="padding: 5px 10px 5px 0px; height: 10px; width: 44.7674%;" valign="middle"
+                            align="right"><span style="font-family: Calibri;"><strong><span style="font-size: medium;">Сума за плащане</span><br></strong></span>
+                        </td>
+                        <td style="width: 54.6512%; padding: 10px 10px 10px 5px; height: 10px;" id="tmp_balance_due"
+                            valign="middle" align="right"><font face="Calibri"
+                                                                size="3"><b>${creditnote.cf_22ebe7}</b></font>&nbsp;<strong
+                                style="font-family: Calibri;">лв.</strong></td>
+                    </tr>
+                    </tbody>
+                    <tbody id="taxItems"></tbody>
+                </table>
+            </div>
+            <span style="font-family: Calibri;"><br></span></div>
+        <div style="width: 100%; margin-top: 1px;"><span style="font-family: Calibri;">&nbsp;</span></div>
+        <div style="width: 100%; margin-top: 1px;"><span style="font-family: Calibri;">&nbsp;</span></div>
+        <div style="width: 100%; margin-top: 1px;"><span style="font-family: Calibri;">&nbsp;</span></div>
+        <div style="width: 100%; margin-top: 1px;"><span style="font-family: Calibri;">&nbsp;</span></div>
+        <div style="width: 100%; margin-top: 1px;"><span style="font-family: Calibri; font-size: small;">&nbsp;</span>
+        </div>
+        <div style="width: 100%; margin-top: 1px;"><span style="font-family: Calibri; font-size: small;"><br></span>
+        </div>
+        <div style="width: 100%; margin-top: 1px;"><span
+                style="font-family: Calibri; font-size: small;">&nbsp;</span><br>
+            <div align="right">&nbsp;</div>
+            <div align="left"><span style="font-family: Calibri; font-size: small;">Подпис: __________</span><br><span
+                    style="font-family: Calibri; font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Евелина Димитрова</span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,127 @@
+
+/*
+Date: 21 February 2025
+Developer: Chavdar
+Version: V1
+Purpose: Upload an invoice for stickers to dropbox folder.
+*/
+organizationID = organization.get("organization_id");
+dataCenter = organization.get("data_center_extension");
+endpoint = organization.get("api_root_endpoint");
+teamMemberID = 0;
+try
+{
+	members = invokeurl
+	[
+		url :"https://api.dropboxapi.com/2/team/members/list"
+		type :POST
+		body:"{}"
+		headers:{"Content-Type":"application/json"}
+		connection:"dfdteamfolder"
+	];
+	members = members.get("members");
+	for each  member in members
+	{
+		if(member.get("profile").get("email").equals("chavdar@dfd-group.com"))
+		{
+			teamMemberID = member.get("profile").get("team_member_id");
+		}
+	}
+}
+catch (e)
+{
+	info "Error: " + e.toString();
+}
+// Get purchase order
+poID = purchase_receive.get("purchaseorder_id");
+po = 0;
+try
+{
+	po = invokeurl
+	[
+		url :endpoint + "/purchaseorders/" + poID + "?organization_id=" + organizationID
+		type :GET
+		connection:"zohoinventory"
+	];
+}
+catch (e)
+{
+	info "Error " + e.toString();
+}
+po = po.get("purchaseorder");
+// Get invoice
+poNumber = po.get("purchaseorder_number");
+poReferenceNumber = po.get("reference_number");
+referenceNumber = poNumber + " / " + poReferenceNumber;
+invoice = 0;
+try
+{
+	invoice = invokeurl
+	[
+		url :endpoint + "/invoices" + "?organization_id=" + organizationID + "&reference_number=" + referenceNumber
+		type :GET
+		connection:"zohoinventory"
+	];
+}
+catch (e)
+{
+	info "Error " + e.toString();
+}
+invoice = invoice.get("invoices").get(0);
+// Get Invoice as PDF
+invoiceID = invoice.get("invoice_id");
+// Get Invoice as PDF
+headersMap = Map();
+headersMap.put("Accept","application/pdf");
+invoicePDF = "";
+try
+{
+	invoicePDF = invokeurl
+	[
+		url :endpoint + "/invoices/" + invoiceID + "?organization_id=" + organizationID
+		type :GET
+		headers:headersMap
+		connection:"zohoinventory"
+	];
+}
+catch (e)
+{
+	info "Error: " + e.toString();
+}
+// "Поръчки"
+fileHeaders = Map();
+faktura = "\\u0424\\u0430\\u043a\\u0442\\u0443\\u0440\\u0430";
+// "Доставчици"
+dostavchici = "\\u0414\\u043e\\u0441\\u0442\\u0430\\u0432\\u0447\\u0438\\u0446\\u0438";
+// "Микро АСУ"
+mikroAsu = "\\u041c\\u0438\\u043a\\u0440\\u043e \\u0410\\u0421\\u0423";
+// "Фактури"
+fakturi = "\\u0424\\u0430\\u043a\\u0442\\u0443\\u0440\\u0438";
+invoiceNumber = invoice.get("invoice_number");
+invoiceDate = invoice.get("date").toString("ddMMyyyy");
+fileName = faktura + "-" + invoiceNumber + "-" + invoiceDate + ".pdf";
+fileName = fileName.replaceAll("/","-");
+apiArgJSON = "{\"path\": \"" + "/" + dostavchici + "/" + mikroAsu + "/" + fakturi + "/" + "2025" + "/" + fileName + "\", \"mode\": \"add\", \"autorename\": true, \"mute\": false}";
+// Set the header with the correctly formatted JSON
+fileHeaders.put("Content-Type","application/octet-stream");
+fileHeaders.put("Dropbox-API-Arg",apiArgJSON);
+fileHeaders.put("Dropbox-API-Select-User",teamMemberID);
+namespaceID = "11459578707";
+fileHeaders.put("Dropbox-API-Path-Root","{\".tag\": \"namespace_id\", \"namespace_id\": \"" + namespaceID + "\"}");
+// Save EN Invoice to Dropbox
+try
+{
+	file = invokeurl
+	[
+		url :"https://content.dropboxapi.com/2/files/upload"
+		type :POST
+		body:invoicePDF
+		headers:fileHeaders
+		connection:"dfddropbox"
+	];
+	info file;
+}
+catch (e)
+{
+	info "Error: " + e.toString();
+}

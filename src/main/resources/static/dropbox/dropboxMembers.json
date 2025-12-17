@@ -1,0 +1,70 @@
+{
+  "members": [
+    {
+      "profile": {
+        "team_member_id": "dbmid:AACKgQ6CS0g05be-fXsvf_QwwdvcHUDDB94",
+        "account_id": "dbid:AACFSnhz_yr57eJ7oHsmIFfFBacIy7tTDd0",
+        "email": "office@dfd-group.com",
+        "email_verified": true,
+        "secondary_emails": [],
+        "status": {
+          ".tag": "active"
+        },
+        "name": {
+          "given_name": "Office",
+          "surname": "DFD",
+          "familiar_name": "Office",
+          "display_name": "Office DFD",
+          "abbreviated_name": "OD"
+        },
+        "membership_type": {
+          ".tag": "full"
+        },
+        "joined_on": "2024-12-29T09:54:29Z",
+        "profile_photo_url": "https://dl-web.dropbox.com/account_photo/get/pid_uphoto%3AAAAAAHjEjfsh1WJFw3senX0Kfs5g9gFEMjVEV7wfayaPjEhusKhauLJqAAzdYNF2hlX-4C8Jjsk7XqvwiUGH?size=128x128&vers=1735466125365",
+        "groups": [
+          "g:09b8020102821d140000000000000003"
+        ],
+        "member_folder_id": "11454272339",
+        "root_folder_id": "11450861955"
+      },
+      "role": {
+        ".tag": "member_only"
+      }
+    },
+    {
+      "profile": {
+        "team_member_id": "dbmid:AACxr6fgraJerUX1K6M0BM0IIvpUDBMUZMA",
+        "account_id": "dbid:AAACrPCWeSeBMMaNPEfI7cWBNuEgyqcjJBw",
+        "email": "chavdar@dfd-group.com",
+        "email_verified": true,
+        "secondary_emails": [],
+        "status": {
+          ".tag": "active"
+        },
+        "name": {
+          "given_name": "Chavdar",
+          "surname": "",
+          "familiar_name": "Chavdar",
+          "display_name": "Chavdar",
+          "abbreviated_name": "C"
+        },
+        "membership_type": {
+          ".tag": "full"
+        },
+        "joined_on": "2024-12-29T09:36:56Z",
+        "profile_photo_url": "https://dl-web.dropbox.com/account_photo/get/pid_uphoto%3AAAAAAKbTi5ww9UojFVG3fjj40KDqwfL54sXwt40_RtSp-IC3l91S1o1d-0t4DqNiZH2FmVMYjchRD1TCsy28?size=128x128&vers=1735465989282",
+        "groups": [
+          "g:09b8020102821d140000000000000003"
+        ],
+        "member_folder_id": "795245069",
+        "root_folder_id": "11454977171"
+      },
+      "role": {
+        ".tag": "team_admin"
+      }
+    }
+  ],
+  "cursor": "AAACIomEnX_sqxsObbtvMbBeP1qJBFCE6EZxukHVYwrXRdKU2bcHNDfNm2tgtfsLtWe7fcSfYzgzul-diC6GYvlbickL7eLg62YOeLFxdwvbMw",
+  "has_more": false
+}

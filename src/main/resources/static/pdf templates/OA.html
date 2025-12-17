@@ -1,0 +1,141 @@
+<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<table style="width: 100%; border-collapse: collapse;">
+    <tbody>
+    <tr>
+        <td style="font-family: Calibri; font-size: 12px; vertical-align: top; padding: 8px; padding-left: 0; width: 50%; white-space: nowrap;">
+            <p> %ScaledLogoImage%<br> <b><span style="font-size: 14px;">%CompanyName%</span></b><br> <span
+                    style="white-space: pre-wrap;">%CompanyCity% %CompanyPostalCode%</span><br> <span
+                    style="white-space: pre-wrap;">%CompanyStreetAddress1% <br>%CompanyCountry%</span><br></p></td>
+        <td style="width: 50%; text-align: right; vertical-align: top; padding: 8px; padding-right: 0; white-space: nowrap;">
+            <div style="display: inline-block; text-align: right; margin: 0;"><span
+                    style="color: rgb(0, 0, 0); font-family: Calibri; font-size: 24px;">ORDER ACKNOWLEDGEMENT</span><br>
+                <span style="font-size: 16px; color: rgb(129, 125, 125); font-family: Calibri;"><b>%SO_Reference%</b></span><br>
+                <span style="font-size: 16px; color: rgb(129, 125, 125); font-family: Calibri;"><b>%SO_Date%</b></span>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<table style="width: 100%; border-collapse: collapse;">
+    <tbody>
+    <tr>
+        <td style="font-family: Calibri; font-size: 14px; vertical-align: top; padding: 8px 8px 8px 0; width: 40%; white-space: nowrap;">
+            <label style="font-size: 10pt; color: #817d7d; font-weight: bold;" class="label-title">
+                Invoice address:
+            </label>
+
+            <div><strong>%CustomerBAttention%</strong></div>
+            <div>%CustomerBAddress%</div>
+            <div>%CustomerBCity%</div>
+            <div>%CustomerBCountry%</div>
+
+            <div style="margin-top: 10px;">Your order: %SO_Number%</div>
+        </td>
+
+        <td style="width: 10%;"></td>
+        <td style="font-family: Calibri; text-align: right; font-size: 14px; vertical-align: top; padding: 8px 0 8px 8px; width: 40%; white-space: nowrap;">
+            <div style="display: inline-block; text-align: left; margin: 0;">
+                <label style="font-size: 10pt; color: #817d7d; font-weight: bold;" class="label-title">
+                    Delivery address:
+                </label>
+
+                <div><strong>%CustomerSAttention%</strong></div>
+                <div>%CustomerSAddress%</div>
+                <div>%CustomerSCity%</div>
+                <div>%CustomerSCountry%</div>
+
+                <div style="margin-top: 10px;">Delivery date: ${salesorder.cf_delivery_time}</div>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<table style="width: 100%; margin-top: 20px; table-layout: fixed; border-spacing: 0; border-collapse: collapse;"
+       class="pcs-itemtable" cellspacing="0" cellpadding="0" border="0">
+    <thead>
+    <tr style="height: 32px;">
+        <td style="font-size: 8pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px; overflow-wrap: break-word; width: 4%;">
+            <span style="font-family: Calibri;">No</span></td>
+        <td style="font-size: 8pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px; overflow-wrap: break-word; width: 9%;">
+            <span style="font-family: Calibri;">Image</span></td>
+        <td style="font-size: 8pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px; overflow-wrap: break-word; width: 11.5412%;">
+            <span style="font-family: Calibri;">Item</span></td>
+        <td style="font-size: 8pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px; overflow-wrap: break-word; width: 37.4588%;">
+            <span style="font-family: Calibri;">&nbsp;Description</span></td>
+        <td style="font-size: 8pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px 5px 5px; overflow-wrap: break-word; width: 10%; text-align: center;">
+            <span style="font-family: Calibri;">Q-ty</span></td>
+        <td style="font-size: 8pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px 5px 5px; overflow-wrap: break-word; width: 10%; text-align: center;">
+            <span style="font-family: Calibri;">EUR / pc</span></td>
+        <td style="font-size: 8pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px 5px 5px; overflow-wrap: break-word; width: 10%; text-align: center;">
+            <span style="font-family: Calibri;">Value</span></td>
+    </tr>
+    </thead>
+    <tbody id="lineitem">
+    <tr>
+        <td style="font-size: 7pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 0px 10px 10px; width: 4%;"
+            valign="top"><span style="font-family: Calibri;"><span style="font-size: 12px;">&nbsp;<span
+                class="siq-user-message">%SiNo%</span></span></span></td>
+        <td style="font-size: 7pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 0px 10px 10px; width: 9%;"
+            valign="top"><span style="font-family: Calibri;">&nbsp;%ItemImage%</span></td>
+        <td style="font-size: 7pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 0px 10px 10px; width: 11.5412%;"
+            valign="top"><span style="font-family: Calibri;"><span style="font-size: 12px;">&nbsp;%MPN%</span></span>
+        </td>
+        <td style="font-size: 7pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 0px 10px 10px; width: 37.4588%;"
+            valign="top"><span style="font-family: Calibri;"><span style="font-size: 12px;"><span
+                style="white-space: pre-wrap; overflow-wrap: break-word;"
+                id="tmp_item_description">%ItemDescription%</span></span></span></td>
+        <td style="font-size: 7pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 10px 5px; overflow-wrap: break-word; text-align: center; width: 10%;"
+            valign="top"><span style="font-family: Calibri;"><span style="font-size: 12px;"><span id="tmp_item_qty">%ItemQty%</span></span></span>
+        </td>
+        <td style="font-size: 7pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 10px 5px; overflow-wrap: break-word; text-align: center; width: 10%;"
+            valign="top"><span style="font-family: Calibri;"><span style="font-size: 12px;"><span id="tmp_item_rate">%ItemRate%</span></span></span>
+        </td>
+        <td style="font-size: 7pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 10px 10px 5px; overflow-wrap: break-word; text-align: center; width: 10%;"
+            valign="top"><span style="font-family: Calibri;"><span style="font-size: 12px;">%ItemAmount%</span></span>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div style="width: 100%; margin-top: 1px;">
+    <div style="width: 45%; padding: 3px 10px 3px 3px; font-size: 9pt; float: left;">
+        <div style="white-space: pre-wrap;"><span style="font-family: Calibri;">&nbsp;</span></div>
+    </div>
+    <div style="width: 50%; float: right;">
+        <table style="font-size: 9pt; color: #000000; background-color: #ffffff; border-spacing: 0; border-collapse: collapse;"
+               width="100%" cellspacing="0" border="0">
+            <tbody id="taxItems">
+            <tr style="height: 10px;">
+                <td style="padding: 5px 10px 5px 0;" valign="middle" align="right"><span
+                        style="font-family: Calibri;"><span style="font-size: 12px;">Tax (%)</span></span></td>
+                <td style="width: 120px; padding: 10px 10px 10px 5px;" valign="middle" align="right"><span
+                        style="font-family: Calibri;"><span style="font-size: 12px;">%TaxValue%</span></span></td>
+            </tr>
+            </tbody>
+            <tbody>
+            <tr style="height: 40px; background-color: #f5f4f3; font-size: 9pt; color: #000000;">
+                <td style="padding: 5px 10px 5px 0;" valign="middle" align="right"><span
+                        style="font-family: Calibri;"><span style="font-size: 12px;"><strong>Total value, EUR                                     netto:</strong></span></span>
+                </td>
+                <td style="width: 120px; padding: 10px 10px 10px 5px;" id="tmp_balance_due" valign="middle"
+                    align="right"><span style="font-family: Calibri;"><span
+                        style="font-size: 12px;"><strong>%SO_Total%</strong></span></span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div style="clear: both; margin-top: 50px; width: 100%;"><p style="margin-top: 7px; overflow-wrap: break-word;"><font
+        face="Calibri"><span style="font-size: 8pt; white-space-collapse: preserve;">&nbsp;</span></font><em
+        style=""><label style="font-family: Calibri; font-size: 10pt; white-space: pre-wrap; color: rgb(129, 125, 125);"
+                        id="tmp_terms_label">Terms &amp; Conditions:</label><br><font face="Calibri"><span
+        style="font-size: 12px; white-space-collapse: preserve;">${contact.cf_payment_terms}</span><span
+        style="font-size: 10pt; white-space-collapse: preserve;"><label style="font-size: 10pt; color: #817d7d;"
+                                                                        id="tmp_terms_label"></label></span></font></em>
+</p><span style="font-family: Calibri; white-space: pre-wrap;"><span style="font-size: 12px;"><em><label
+        style="font-size: 10pt; color: #817d7d;" id="tmp_terms_label">Bank details:</label></em></span></span>
+    <p style="margin-top: 7px; white-space: pre-wrap; word-wrap: break-word; font-size: 8pt;"><span
+            style="font-family: Calibri;"><span
+            style="font-size: 12px;"><em><strong>DFD GROUP  Ltd.</strong></em></span></span><span
+            style="font-family: Calibri;"><span style="font-size: 12px;"><em><br>${contact.cf_bank}</em></span></span>
+    </p></div> <p>&nbsp;</p>

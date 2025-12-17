@@ -1,0 +1,104 @@
+{
+  "error_summary": "shared_link_already_exists/metadata/...",
+  "error": {
+    ".tag": "shared_link_already_exists",
+    "shared_link_already_exists": {
+      ".tag": "metadata",
+      "metadata": {
+        ".tag": "file",
+        "url": "https://www.dropbox.com/scl/fi/xgrpsk7g7freoxsa66ol2/bon_de_commande.pdf?rlkey=cvzhz934r0sebuf0ux2v1v7d8&dl=0",
+        "id": "id:KebuWWx3TT4AAAAAAABzmw",
+        "name": "bon_de_commande.pdf",
+        "path_lower": "/kromm/bon de commande/bon_de_commande.pdf",
+        "link_permissions": {
+          "resolved_visibility": {
+            ".tag": "public"
+          },
+          "requested_visibility": {
+            ".tag": "public"
+          },
+          "can_revoke": true,
+          "effective_audience": {
+            ".tag": "public"
+          },
+          "link_access_level": {
+            ".tag": "viewer"
+          },
+          "visibility_policies": [
+            {
+              "policy": {
+                ".tag": "public"
+              },
+              "resolved_policy": {
+                ".tag": "public"
+              },
+              "allowed": true
+            },
+            {
+              "policy": {
+                ".tag": "team_only"
+              },
+              "resolved_policy": {
+                ".tag": "team_only"
+              },
+              "allowed": true
+            },
+            {
+              "policy": {
+                ".tag": "password"
+              },
+              "resolved_policy": {
+                ".tag": "password"
+              },
+              "allowed": true
+            }
+          ],
+          "can_set_expiry": true,
+          "can_remove_expiry": true,
+          "allow_download": true,
+          "can_allow_download": true,
+          "can_disallow_download": true,
+          "allow_comments": false,
+          "team_restricts_comments": false,
+          "audience_options": [
+            {
+              "audience": {
+                ".tag": "public"
+              },
+              "allowed": true
+            },
+            {
+              "audience": {
+                ".tag": "team"
+              },
+              "allowed": true
+            },
+            {
+              "audience": {
+                ".tag": "no_one"
+              },
+              "allowed": true
+            }
+          ],
+          "can_set_password": true,
+          "can_remove_password": true,
+          "require_password": false,
+          "can_use_extended_sharing_controls": true
+        },
+        "team_member_info": {
+          "team_info": {
+            "id": "dbtid:AABW-OwzNYpYUd3qzVaBsCKuxsegO-V6tUo",
+            "name": "DFD Group"
+          },
+          "display_name": "Chavdar",
+          "member_id": "dbmid:AACxr6fgraJerUX1K6M0BM0IIvpUDBMUZMA"
+        },
+        "preview_type": "doc",
+        "client_modified": "2025-04-28T08:04:58Z",
+        "server_modified": "2025-07-21T11:37:36Z",
+        "rev": "0163a6ee7047c4c00000002ab0b4b53",
+        "size": 30876
+      }
+    }
+  }
+}

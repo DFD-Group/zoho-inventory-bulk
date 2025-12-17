@@ -1,0 +1,819 @@
+<!--The below style_start tag has to be present as it is used to substring the style content from the body html-->
+
+<!--style_start-->
+<style type="text/css" media="all">
+
+    @page {
+      size: 8.27in 11.69in;
+      margin: 0.200000in 0 0.300000in 0;
+      background:   #ffffff;
+
+      @bottom-center {
+        content: element(footer);
+      }
+
+      @top-center {
+        content: element(header)
+      }
+    }
+
+
+    table {
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+    .pcs-itemtable {
+      -fs-table-paginate: paginate;
+    }
+    img {
+      page-break-inside: avoid;
+     }
+    #pageNumber:before {
+      content: &quot;&quot;counter(page)&quot;&quot;;
+    }
+
+    @font-face {
+      font-family: 'WebFont-';
+      src: local(), url();
+    }
+
+    .pcs-template {
+        font-family: Open Sans;
+      font-size: 9pt;
+      color: #333333;
+    }
+
+    .pcs-header-content {
+      font-size: 9pt;
+      color: #333333;
+      background-color: #ffffff;
+    }
+    .pcs-template-body {
+        padding: 0 0.200000in 0 0.200000in;
+    }
+    .pcs-template-footer {
+        height: 0.300000in;
+      font-size: 6pt;
+      color: #aaaaaa;
+      padding: 0 0.200000in 0 0.200000in;
+      background-color: #ffffff;
+    }
+    .pcs-footer-content {
+    word-wrap: break-word;
+    color: #aaaaaa;
+        border-top: 1px solid #adadad;
+    }
+
+    .pcs-label {
+      color: #333333;
+    }
+    .pcs-entity-title {
+      font-size: 28pt;
+      color: #000000;
+    }
+    .pcs-orgname {
+      font-size: 10pt;
+      color: #333333;
+    }
+    .pcs-customer-name {
+      font-size: 9pt;
+      color: #333333;
+    }
+    .pcs-eori-number {
+      color: #333;
+      margin: 0;
+      padding-top: 10px;
+    }
+   .pcs-itemtable-header {
+      font-size: 9pt;
+      color: #ffffff;
+      background-color: #3c3d3a;
+    }
+    .pcs-itemtable-breakword {
+      word-wrap: break-word;
+    }
+    .pcs-taxtable-header {
+      font-size: 9pt;
+      color: #ffffff;
+      background-color: #3c3d3a;
+    }
+    .breakrow-inside {
+      page-break-inside: avoid;
+    }
+    .breakrow-after {
+      page-break-after:auto;
+    }
+    .pcs-item-row {
+      font-size: 9pt;
+      border-bottom: 1px solid #adadad;
+      background-color: #ffffff;
+      color: #000000;
+    }
+    .pcs-img-fit-aspectratio {
+      object-fit: contain;
+      object-position: top;
+    }
+
+    .pcs-item-sku, .pcs-item-hsn, .pcs-item-coupon, .pcs-item-serialnumber, .pcs-item-unitcode {
+      margin-top: 2px;
+        font-size: 10px;
+        color: #444444;
+    }
+    .pcs-item-desc {
+        color: #727272;
+        font-size: 9pt;
+     }
+    .pcs-balance {
+      background-color: #f5f4f3;
+      font-size: 9pt;
+      color: #000000;
+    }
+    .pcs-savings {
+    font-size: 0pt;
+    color: ;
+    background-color: ;
+    }
+    .pcs-totals {
+      font-size: 9pt;
+      color: #000000;
+      background-color: #ffffff;
+    }
+    .pcs-notes {
+      font-size: 8pt;
+    }
+    .pcs-terms {
+      font-size: 8pt;
+    }
+    .pcs-header-first {
+      background-color: #ffffff;
+      font-size: 9pt;
+      color: #333333;
+        height: auto;
+      }
+
+   .pcs-status {
+       color: ;
+      font-size: 15pt;
+      border: 3px solid ;
+      padding: 3px 8px;
+   }
+   .billto-section {
+       padding-top: 0mm;
+       padding-left: 0mm;
+     }
+     .shipto-section {
+       padding-top: 0mm;
+       padding-left: 0mm;
+     }
+
+   @page :first {
+       @top-center {
+          content: element(header);
+      }
+      margin-top: 0.70in;
+    }
+
+    .pcs-template-header {
+      padding: 0 0.200000in 0 0.200000in;
+      height: 0.70in;
+    }
+
+    .pcs-template-fill-emptydiv {
+      display: table-cell;
+      content: " ";
+      width: 100%;
+    }
+
+
+  /* Additional styles for RTL compat */
+
+  /* Helper Classes */
+
+  .inline {
+    display: inline-block;
+  }
+  .v-top {
+    vertical-align: top;
+  }
+  .text-align-right {
+    text-align: right;
+  }
+  .rtl .text-align-right {
+    text-align: left;
+  }
+  .text-align-left {
+    text-align: left;
+  }
+  .rtl .text-align-left {
+    text-align: right;
+  }
+  .float-section-right {
+    float: right;
+  }
+  .rtl .float-section-right{
+    float: left;
+  }
+  .float-section-left {
+    float: left;
+  }
+  .rtl .float-section-left{
+    float: right;
+  }
+
+  /* Helper Classes End */
+
+  .item-details-inline {
+    display: inline-block;
+    margin: 0 10px;
+    vertical-align: top;
+  Exception in thread "main" com.fasterxml.jackson.core.JsonParseException: Unexpected character ('<' (code 60)): expected a valid value (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+   at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 2, column: 1]
+      at com.fasterxml.jackson.core.JsonParser._constructReadException(JsonParser.java:2660)
+      at com.fasterxml.jackson.core.base.ParserMinimalBase._reportUnexpectedChar(ParserMinimalBase.java:741)
+      at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._handleOddValue(ReaderBasedJsonParser.java:2054)
+      at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken(ReaderBasedJsonParser.java:780)
+      at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:5004)
+      at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4910)
+      at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3860)
+      at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3828)
+      at services.SalesOrderService.getSalesOrder(SalesOrderService.kt:60)
+      at ZohoSalesOrderKt.main(ZohoSalesOrder.kt:25)
+      at ZohoSalesOrderKt.main(ZohoSalesOrder.kt)
+    max-width: 70%;
+  }
+
+  .total-in-words-container {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .total-in-words-label {
+    vertical-align: top;
+    padding: 0 10px;
+  }
+  .total-in-words-value {
+    width: 170px;
+  }
+  .total-section-label {
+    padding: 5px 10px 5px 0;
+    vertical-align: middle;
+  }
+  .total-section-value {
+    width: 120px;
+    vertical-align: middle;
+    padding: 10px 10px 10px 5px;
+  }
+  .rtl .total-section-value {
+    padding: 10px 5px 10px 10px;
+  }
+
+  .tax-summary-description {
+    color: #727272;
+    font-size: 8pt;
+  }
+
+  .bharatqr-bg {
+    background-color: #f4f3f8;
+  }
+
+  /* Overrides/Patches for RTL compat */
+    .rtl th {
+      text-align: inherit; /* Specifically setting th as inherit for supporting RTL */
+    }
+  /* Overrides/Patches End */
+
+
+  /* Subject field styles */
+  .subject-block {
+      margin-top: 20px;
+  }
+  .subject-block-value {
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      line-height: 14pt;
+      margin-top:5px;
+  }
+  /* Subject field styles End*/
+
+  .pcs-sub-label {
+    color: #666;
+    font-size: 10px;
+  }
+  .pcs-hsnsummary-compact {
+    padding: 0;
+    margin-top: 3px;
+  }
+  .pcs-hsnsummary-label-compact {
+    margin-bottom: 3px;
+    font-weight:600;
+    padding-left: 3px;
+    font-size: 9pt;
+  }
+  .pcs-hsnsummary-header-compact {
+    text-align:right;
+    padding: 5px 7px 2px 7px;
+    word-wrap: break-word;
+    width: 17%;
+    height: 32px;
+    border-right: 1px solid #9E9E9E;
+    font-size: 8pt;
+    font-weight: 600;
+  }
+  .pcs-hsnsummary-body-compact, .pcs-hsnsummary-total-compact {
+    text-align:right;
+    word-wrap: break-word;
+    font-size: 7pt;
+    padding: 4px 10px;
+  }
+  .pcs-hsnsummary-total-compact {
+    border-top: 1px solid #adadad;
+  }
+  .pcs-ukvat-summary {
+    margin-top:50px;
+    clear: both;
+    width: 100%;
+  }
+  .pcs-ukvat-summary-header {
+    padding:5px 10px 5px 5px;
+  }
+  .pcs-ukvat-summary-header:first-child {
+    padding-left: 10px;
+  }
+  .pcs-ukvat-summary-label {
+    font-size: 10pt;
+  }
+  .pcs-ukvat-summary-table {
+    margin-top: 10px;
+    width: 100%;
+    table-layout: fixed;
+  }
+  .pcs-ukvat-summary-body, .pcs-ukvat-summary-total {
+    padding: 10px 10px 5px 10px;
+  }
+  .pcs-ukvat-summary-body:first-child {
+    padding-bottom: 10px;
+    padding-right: 0;
+  }
+  .pcs-payment-block {
+    margin-top: 20px;
+  }
+  .pcs-payment-block-inner {
+    margin-top: 10px;
+  }
+
+  .pcs-entity-label-section {
+    padding:5px 10px 5px 0px;
+    font-size: 10pt;
+   }
+
+  .pcs-colon {
+    width: 3%;
+  }
+  .retention-block-label {
+    padding: 5px 10px 5px 0;
+  }
+  .retention-block-value {
+    padding: 10px 10px 10px 5px;
+  }
+
+  .pcs-d-inline {
+      display: inline;
+  }
+  .bank-details-section {
+    margin-top:10px;
+    width: 100%;
+    word-wrap: break-word;
+  }
+
+
+
+
+  .pcs-w-100 {
+    width: 100%;
+  }
+
+  .pcs-h-10px {
+    height: 10px;
+  }
+  .pcs-w-120px {
+    width: 120px;
+  }
+  .pcs-w-110px {
+    width: 110px;
+  }
+  .pcs-w-50 {
+    width: 50%;
+  }
+
+
+
+
+
+
+  .pcs-d-table-cell {
+    display: table-cell;
+  }
+
+
+
+
+
+  .pcs-talign-center {
+    text-align: center;
+  }
+  .pcs-wordwrap-bw {
+    word-wrap: break-word;
+  }
+  .pcs-whitespace-pw {
+    white-space: pre-wrap;
+  }
+  .pcs-fw-600 {
+    font-weight: 600;
+  }
+  .pcs-text-uppercase {
+    text-transform: uppercase;
+  }
+
+  .pcs-text-underline {
+    text-decoration: underline;
+  }
+  .pcs-text-red {
+    color: red;
+  }
+  .pcs-dark-grey {
+    color: #666;
+  }
+  .pcs-fs-10 {
+    font-size: 10px;
+  }
+  .pcs-fs-12 {
+    font-size: 12px;
+  }
+
+
+
+
+  .pcs-table-fixed {
+    table-layout:fixed;
+  }
+
+
+
+
+
+  .pcs-valign-middle {
+    vertical-align: middle;
+  }
+
+
+
+  .pcs-clearfix {
+    clear: both;
+  }
+  .pcs-pb-0 {
+    padding-bottom: 0px;
+  }
+  .pcs-pb-5 {
+    padding-bottom: 5px;
+  }
+  .pcs-pb-2 {
+    padding-bottom: 2px;
+  }
+  .pcs-pt-20 {
+    padding-top: 20px;
+  }
+  .pcs-pt-5 {
+    padding-top: 5px;
+  }
+  .pcs-pt-10 {
+    padding-top: 10px;
+  }
+  .pcs-pt-3 {
+    padding-top: 3px;
+  }
+  .pcs-pt-0 {
+    padding-top: 0px;
+  }
+
+  .pcs-px-10 {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .pcs-py-0 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .pcs-mt-5 {
+    margin-top: 5px;
+  }
+
+  .pcs-px-20 {
+      padding-right: 20px;
+      padding-left: 20px;
+  }
+
+  .pcs-py-10 {
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+
+  .pcs-ps-5 {
+      padding-left: 5px;
+  }
+
+  .pcs-pe-10 {
+      padding-right: 10px;
+  }
+
+  .word-wrap-break-word {
+      word-wrap: break-word;
+  }
+    .lineitem-column{
+      padding: 10px 10px 5px 10px;
+      word-wrap: break-word;
+    }
+    .entity-details-padding{
+       padding: 5px 10px 5px 0px;
+     }
+     .rtl .entity-details-padding{
+       padding: 5px 0px 5px 10px;
+     }
+     .line-item-padding{
+       padding: 10px 10px 10px 5px;
+     }
+     .rtl .line-item-padding{
+       padding: 10px 5px 10px 10px;
+     }
+</style>
+
+<!--style_end-->
+
+<div class="pcs-template ">
+    <div id="header" class="pcs-template-header pcs-header-content" style="position:running(header);top:0;">
+
+
+
+        <div class="pcs-template-fill-emptydiv"></div>
+
+    </div>
+
+    <div id="header_otherpages" class="pcs-template-header" style="position:running(header_otherpages);top:0;">
+
+
+
+        <div class="pcs-template-fill-emptydiv"></div>
+
+    </div>
+
+    <div class="pcs-template-footer" style="right:0;bottom:0;position:running(footer);">
+
+        <div class="pcs-footer-content">
+
+
+
+
+            <div class="pcs-template-fill-emptydiv"></div>
+
+
+
+
+
+
+
+
+            <div style="padding: 10px 0 20px; text-align: right;">
+                <span style="vertical-align: middle; padding-right: 5px;" id="pageNumber"></span>
+            </div>
+
+            <div style="clear:both"></div>
+
+        </div>
+    </div>
+
+    <div class="pcs-template-body ">
+        <table style="width:100%;table-layout: fixed;">
+            <tbody>
+            <tr>
+                <td style="vertical-align: top; width:50%;">
+                    <div>
+                        <img loading="lazy" id="logo_content" style="width:72.00px;height:70.00px;" src="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&#10;knI9ewAAAABJRU5ErkJggg==" />
+                    </div>
+                    <span class="pcs-orgname"><b>DFD Group</b></span><br />
+                    <span class="pcs-label">
+             <span id="tmp_org_address" style="white-space: pre-wrap;word-wrap: break-word;">Company ID : BG203764329&#10;25, Krum Kyulyavkov Str.&#10;Sofia  1172&#10;Bulgaria</span>
+           </span>          </td>
+
+                <td style="vertical-align: top; width:50%;" class="text-align-right">
+                    <span class="pcs-entity-title">SALES ORDER</span><br />
+                    <span class="pcs-label" style="font-size: 10pt;" id="tmp_entity_number"><b>Sales Order# P45191; P45197</b></span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+
+        <table style="width:100%;margin-top:30px;table-layout:fixed;">
+            <tr>
+                <td style="width:60%;vertical-align:bottom;word-wrap: break-word;">
+                    <div><label id="tmp_billing_address_label" class="pcs-label"  style="font-size: 10pt;">Bill To</label>
+                        <br />
+                        <span id="tmp_billing_address" style="white-space: pre-wrap;"><strong><span id="zb-pdf-customer-detail" class="pcs-customer-name">KRÖMM GROUP</span></strong>
+ZA La Bourlaratte
+43200, ST JEURES
+France</span>
+                    </div>         <div style="clear:both;width:50%;margin-top: 20px;">
+                    <label id="tmp_shipping_address_label" class="pcs-label"  style="font-size: 10pt;">Ship To</label>
+                    <br />
+                    <span id="tmp_shipping_address" style="white-space: pre-wrap;">COLAS FRANCE BAS RHIN, URBASOLAR&#10;Usine MOSOLF Logistics &amp; Services&#10;77971 KIPPENHEIM&#10;GERMANY&#10;--------------------&#10;LD-Krömm&#10;ZA du bec, Allée Saint Exupery&#10;42500 Le Chambon-Feugerolles&#10;FRANCE</span>
+                </div>
+
+                </td>
+                <td style="vertical-align:bottom;width: 40%;" class="text-align-right">
+                    <table cellpadding="0" cellspacing="0" border="0" style="float:right;table-layout: fixed;word-wrap: break-word;width: 100%;">
+                        <tbody>
+
+                        <tr>
+                            <td style="font-size:10pt;" class="text-align-right entity-details-padding">
+                                <span  class="pcs-label">Order Date :</span>
+                            </td>
+                            <td class="text-align-right">
+                                <span id="tmp_entity_date">18.02.2025</span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-align-right entity-details-padding" style="font-size: 10pt;">
+                                <span class="pcs-label">Terms :</span>
+                            </td>
+                            <td class="text-align-right">
+                                <span id="tmp_payment_terms">Payment conditions: Within 45 days Due net</span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="font-size: 10pt;" class="text-align-right entity-details-padding">
+                                <span  class="pcs-label">Expected Shipment Date :</span>
+                            </td>
+                            <td class="text-align-right">
+                                <span id="tmp_due_date">06.03.2025</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-size: 10pt;" class="text-align-right entity-details-padding">
+                                <span  class="pcs-label">Ref# :</span>
+                            </td>
+                            <td class="text-align-right">
+                                <span id="tmp_ref_number">2025-0990</span>
+                            </td>
+                        </tr>
+
+
+
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+
+        <table cellpadding="0" cellspacing="0" border="0" class="pcs-itemtable" style="width:100%;margin-top:20px;table-layout:fixed;">
+            <thead>
+            <tr style="height:32px;">
+                <td class="pcs-itemtable-header pcs-itemtable-breakword" id="" style="padding: 5px 0px 5px 5px;width: 5%;text-align: center;">
+                    #
+                </td>
+                <td class="pcs-itemtable-header pcs-itemtable-breakword" id="" style="padding: 5px 10px 5px 20px;width: ;text-align: left;">
+                    Item &amp; Description
+                </td>
+                <td class="pcs-itemtable-header pcs-itemtable-breakword" id="tmp_entity_itemcflabel" style="padding: 5px 10px 5px 5px;width: 11%;text-align: left;">
+                    Customer order #
+                </td>
+                <td class="pcs-itemtable-header pcs-itemtable-breakword" id="" style="padding: 5px 10px 5px 5px;width: 11%;text-align: right;">
+                    Qty
+                </td>
+                <td class="pcs-itemtable-header pcs-itemtable-breakword" id="" style="padding: 5px 10px 5px 5px;width: 11%;text-align: right;">
+                    Rate
+                </td>
+                <td class="pcs-itemtable-header pcs-itemtable-breakword" id="" style="padding: 5px 10px 5px 5px;width: 120px;text-align: right;">
+                    Amount
+                </td>
+
+            </tr>
+            </thead>
+            <tbody class="itemBody">
+            <tr class="breakrow-inside breakrow-after">
+                <td class="pcs-item-row" style="padding: 10px 0px 10px 5px;text-align: center;word-wrap: break-word;" valign="top">
+                    1
+                </td>
+                <td class="pcs-item-row" style="padding: 10px 0px 10px 20px;" valign="top">
+                    <div >
+                        <div >
+
+                            <span id="tmp_item_name" style="word-wrap: break-word;">Barrier D25 | 5 RST | LP 245x95 COLAS | RAL 2004</span><br />
+
+                            <span id="tmp_item_description" class="pcs-item-desc" style="white-space: pre-wrap;word-wrap: break-word;">Barrier ø25, 5 RST, RAL 2004&#10;LP 245x95 &quot;COLAS&quot;</span>
+
+                        </div>
+                    </div>
+                </td>
+                <td id="tmp_entity_itemcfvalue" class="pcs-item-row" style="padding: 10px 10px 5px 10px;word-wrap: break-word;" valign="top">
+                    <span>P45191 / 17.02.2025</span>
+                </td>
+
+
+
+
+
+
+
+
+
+                <td class="pcs-item-row text-align-right" style="padding: 10px 10px 5px 10px;word-wrap: break-word;" valign="top">
+                    <span id="tmp_item_qty">1 216</span>
+                    <div class="pcs-item-desc">pcs</div>
+                </td>
+
+                <td class="pcs-item-row text-align-right" style="padding: 10px 10px 5px 10px;word-wrap: break-word;" valign="top">
+                    <span id="tmp_item_rate">14,35</span>
+                </td>
+                <td class="pcs-item-row text-align-right line-item-padding" style="word-wrap: break-word;" valign="top">
+                    <span id="tmp_item_amount">17 449,60</span>
+                </td>
+            </tr>
+            <tr class="breakrow-inside breakrow-after">
+                <td class="pcs-item-row" style="padding: 10px 0px 10px 5px;text-align: center;word-wrap: break-word;" valign="top">
+                    2
+                </td>
+                <td class="pcs-item-row" style="padding: 10px 0px 10px 20px;" valign="top">
+                    <div >
+                        <div >
+
+                            <span id="tmp_item_name" style="word-wrap: break-word;">Barrier D25 | 5 RST | LP 245x95 COLAS | RAL 2004</span><br />
+
+                            <span id="tmp_item_description" class="pcs-item-desc" style="white-space: pre-wrap;word-wrap: break-word;">Barrier ø25, 5 RST, RAL 2004&#10;LP 245x95 &quot;COLAS&quot;</span>
+
+                        </div>
+                    </div>
+                </td>
+                <td id="tmp_entity_itemcfvalue" class="pcs-item-row" style="padding: 10px 10px 5px 10px;word-wrap: break-word;" valign="top">
+                    <span>P45197 / 17.02.2025</span>
+                </td>
+
+
+
+
+
+
+
+
+
+                <td class="pcs-item-row text-align-right" style="padding: 10px 10px 5px 10px;word-wrap: break-word;" valign="top">
+                    <span id="tmp_item_qty">304</span>
+                    <div class="pcs-item-desc">pcs</div>
+                </td>
+
+                <td class="pcs-item-row text-align-right" style="padding: 10px 10px 5px 10px;word-wrap: break-word;" valign="top">
+                    <span id="tmp_item_rate">14,35</span>
+                </td>
+                <td class="pcs-item-row text-align-right line-item-padding" style="word-wrap: break-word;" valign="top">
+                    <span id="tmp_item_amount">4 362,40</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div style="width: 100%;margin-top: 1px;">
+            <div style="width: 45%;padding: 0 10px 3px 3px;font-size: 9pt;" class="float-section-left">
+                <div class="pcs-pt-3">
+                    <div style="white-space: pre-wrap;"></div>
+                </div>
+            </div>
+            <div style="width: 50%;" class="float-section-right">
+                <table width="100%" border="0"  cellspacing="0" class="pcs-totals">
+                    <tbody>
+                    <tr>
+                        <td class="text-align-right entity-details-padding" valign="middle">Sub Total</td>
+                        <td style="width:120px;" class="text-align-right line-item-padding" valign="middle" id="tmp_subtotal">21 812,00</td>
+                    </tr>
+
+
+
+
+
+
+
+
+
+                    <tr class="pcs-balance" style="height:40px;">
+                        <td class="text-align-right entity-details-padding" valign="middle"><b>Total</b></td>
+                        <td style="width:120px;" class="text-align-right line-item-padding" valign="middle" id="tmp_total"><b>EUR21 812,00</b></td>               </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+
+
+
+
+    </div>
+
+</div>

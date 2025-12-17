@@ -1,0 +1,131 @@
+
+/*
+Date: 4 December 2024
+Developer: Chavdar
+Version: V1
+Requirement:
+Add "OPISANIE-BG", "BG-PRICE", "AMOUNT-BG" to each item in an Invoice
+*/
+// Fetch necessary details
+invoiceID = invoice.get("invoice_id");
+organizationID = organization.get("organization_id");
+dataCenter = organization.get("data_center_extension");
+endpoint = organization.get("api_root_endpoint");
+lineItems = invoice.get("line_items");
+lineItemList = List();
+// Correct initialization for list
+itemData = Map();
+// Map to store item details with item_id as key
+totalAmountBg = 0;
+for each  item in lineItems
+{
+	// Preserve the item ID for update
+	lineItemMap = Map();
+	itemId = item.get("item_id");
+	lineItemMap.put("line_item_id",item.get("line_item_id"));
+	// Add OPISANIE-BG custom field
+	lineCustomFieldList = List();
+	opisanieMap = Map();
+	try
+	{
+		itemDetails = invokeurl
+		[
+			url :endpoint + "/items/" + itemId + "?organization_id=" + organizationID
+			type :GET
+			connection:"zohoinventory"
+		];
+		itemCustomFields = itemDetails.get("item").get("custom_fields");
+		info itemCustomFields;
+		for each  field in itemCustomFields
+		{
+			if(field.get("field_id") == "126938000000345874" && !field.get("value").contains("Транспорт по поз"))
+			{
+				opisanieMap.put("api_name","cf_test");
+				opisanieMap.put("value",field.get("value"));
+				break;
+			}
+		}
+	}
+	catch (e)
+	{
+		info "Error " + e.toString();
+	}
+	lineCustomFieldList.add(opisanieMap);
+	// Add BG-PRICE custom field
+	bgPrice = item.get("rate") * 1.95583;
+	// Example calculation for BG price (20% markup)
+	bgPriceMap = Map();
+	bgPriceMap.put("api_name","cf_bg_price");
+	bgPriceMap.put("value",bgPrice.round(2));
+	lineCustomFieldList.add(bgPriceMap);
+	// Add AMOUNT-BG custom field
+	amountBG = item.get("quantity") * bgPrice;
+	amountBGMap = Map();
+	amountBGMap.put("api_name","cf_proba");
+	amountBGMap.put("value",amountBG.round(2));
+	totalAmountBg = totalAmountBg + amountBG.round(2);
+	lineCustomFieldList.add(amountBGMap);
+	lineItemMap.put("item_custom_fields",lineCustomFieldList);
+	// Add custom fields to line item
+	lineItemList.add(lineItemMap);
+}
+invoiceCustomFieldList = List();
+totalAmountBgMap = Map();
+totalAmountBgMap.put("api_name","cf_total_amout_bg");
+totalAmountBgMap.put("value",totalAmountBg.round(2));
+invoiceCustomFieldList.add(totalAmountBgMap);
+cfSumNoDdsMap = Map();
+cfSumNoDdsMap.put("api_name","cf_sum_no_dds");
+cfSumNoDdsMap.put("value",totalAmountBg.round(2));
+invoiceCustomFieldList.add(cfSumNoDdsMap);
+ddsValueMap = Map();
+ddsValueMap.put("api_name","cf_dds");
+ddsValueMap.put("value",0);
+invoiceCustomFieldList.add(ddsValueMap);
+poruchkaDjodiMap = Map();
+try
+{
+	invoiceDetails = invokeurl
+	[
+		url :endpoint + "/invoices/" + invoice.get("invoice_id") + "?organization_id=" + organizationID
+		type :GET
+		connection:"zohoinventory"
+	];
+	poruchkaDjodiMap.put("api_name","cf_5aa19c");
+	poruchkaDjodiMap.put("value",invoiceDetails.get("invoice").get("salesorders").get(0).get("reference_number"));
+}
+catch (e)
+{
+	info "Error " + e.toString();
+}
+invoiceCustomFieldList.add(poruchkaDjodiMap);
+// Prepare invoice payload
+invoiceMap = Map();
+invoiceMap.put("line_items",lineItemList);
+invoiceMap.put("custom_fields",invoiceCustomFieldList);
+// Convert to JSON format
+jsonPayload = Map();
+jsonPayload.put("JSONString",invoiceMap);
+// Update the invoice via API
+try
+{
+	invoiceUpdate = invokeurl
+	[
+		url :endpoint + "/invoices/" + invoiceID + "?organization_id=" + organizationID
+		type :PUT
+		parameters:jsonPayload
+		connection:"zohoinventory"
+	];
+	if(invoiceUpdate.get("code") == 0)
+	{
+		info "Invoice updated successfully: " + invoiceUpdate.get("message");
+	}
+	else
+	{
+		info "Invoice update failed: " + invoiceUpdate.get("message");
+	}
+}
+catch (e)
+{
+	info "Error updating invoice ID: " + invoiceID + " - Error: " + e.toString();
+}

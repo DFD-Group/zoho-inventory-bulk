@@ -1,0 +1,8 @@
+sendmail
+[
+    from :zoho.adminuserid
+    to :"office@dfd-group.com"
+    subject :"The a"
+    message :"The a"
+    Attachments :file:pdfResponse
+]

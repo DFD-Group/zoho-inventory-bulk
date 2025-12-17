@@ -1,0 +1,26 @@
+{
+  "Content-Type": "application/octet-stream",
+  "Dropbox-API-Arg": "{\"path\": \"/\\u0414\\u043e\\u0441\\u0442\\u0430\\u0432\\u0447\\u0438\\u0446\\u0438/\\u041c\\u0438\\u043a\\u0440\\u043e \\u0410\\u0421\\u0423/\\u0424\\u0430\\u043a\\u0442\\u0443\\u0440\\u0438/2025/\\u0424\\u0430\\u043A\\u0442\\u0443\\u0440\\u0430-1000001482-19062025.pdf\", \"mode\": \"add\", \"autorename\": true, \"mute\": false}",
+  "Dropbox-API-Select-User": "dbmid:AACxr6fgraJerUX1K6M0BM0IIvpUDBMUZMA",
+  "Dropbox-API-Path-Root": "{\".tag\": \"namespace_id\", \"namespace_id\": \"11459578707\"}"
+}
+
+{
+  "Content-Type": "application/octet-stream",
+  "Dropbox-API-Select-User": "dbmid:AACxr6fgraJerUX1K6M0BM0IIvpUDBMUZMA",
+  "Dropbox-API-Path-Root": "{\".tag\": \"namespace_id\", \"namespace_id\": \"11459578707\"}",
+  "Dropbox-API-Arg": "{\"path\": \"/\\u041F\\u043E\\u0440\\u044A\\u0447\\u043A\\u0438/1060 Kromm exp-30062025/Invoice-1000001479-17062025-(2025-C-238-P50107-EUROVIA).pdf\", \"mode\": \"add\", \"autorename\": true, \"mute\": false}"
+}
+
+{
+  "function_name": "test_function",
+  "description": "",
+  "entity": "invoice",
+  "language": "deluge",
+  "script": "\n/*\nDate: 21 February 2025\nDeveloper: Chavdar\nVersion: V1\nPurpose: Upload an invoice for stickers to dropbox folder.\n*/\norganizationID = organization.get(\"organization_id\");\ndataCenter = organization.get(\"data_center_extension\");\nendpoint = organization.get(\"api_root_endpoint\");\ninvoiceID = invoice.get(\"invoice_id\");\n// API Headers\nheadersMap = Map();\nheadersMap.put(\"Accept\",\"application/pdf\");\ninvoicePDF = 0;\ntry \n{\n\tinvoicePDF = invokeurl\n\t[\n\t\turl :endpoint + \"/invoices/\" + invoiceID + \"?organization_id=\" + organizationID\n\t\ttype :GET\n\t\theaders:headersMap\n\t\tconnection:\"zohoinventory\"\n\t];\n\tinfo invoicePDF;\n}\ncatch (e)\n{\n\tinfo \"Error: \" + e.toString();\n}\n// \"Поръчки\"\nfileHeaders = Map();\nfileName = \"Invoice\" + \".pdf\";\napiArgJSON = \"{\\\"path\\\": \\\"\"  + fileName + \"\\\", \\\"mode\\\": \\\"add\\\", \\\"autorename\\\": true, \\\"mute\\\": false}\";\n// Set the header with the correctly formatted JSON\nfileHeaders.put(\"Content-Type\",\"application/octet-stream\");\nfileHeaders.put(\"Dropbox-API-Arg\",apiArgJSON);\nfileHeaders.put(\"Dropbox-API-Select-User\",\"dbmid:AACxr6fgraJerUX1K6M0BM0IIvpUDBMUZMA\");\nnamespaceID = \"11459578707\";\nfileHeaders.put(\"Dropbox-API-Path-Root\",\"{\\\".tag\\\": \\\"namespace_id\\\", \\\"namespace_id\\\": \\\"\" + namespaceID + \"\\\"}\");\n// Save EN Invoice to Dropbox\ntry \n{\n\tfile = invokeurl\n\t[\n\t\turl :\"https://content.dropboxapi.com/2/files/upload\"\n\t\ttype :POST\n\t\tbody:invoicePDF\n\t\theaders:fileHeaders\n\t\tconnection:\"dfddropbox\"\n\t];\n\tinfo file;\n}\ncatch (e)\n{\n\tinfo \"Error: \" + e.toString();\n}\n",
+  "is_execute": true,
+  "sample_param": {
+    "entity_id": "126938000003881019"
+  },
+  "include_orgvariables_params": false
+}

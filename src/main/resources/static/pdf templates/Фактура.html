@@ -1,0 +1,144 @@
+<style type="text/css" media="all"> #lineItem tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+} </style>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+<div style="font-size: 13pt; color: #333333;">
+    <div style="padding: 0 0.20in 0 0.20in;">
+        <div align="center" style="display: table; width: 100%; text-align: center;">
+            <table border="0" style="width: 100%; border-collapse: collapse;">
+                <tbody>
+                <tr>
+                    <td style="width: 33.3333%; text-align: left;"><span style="font-family: Calibri; font-size: 13px;"><strong>Доставчик</strong>:<br>ДФД Груп ЕООД<br>ул. Крум Кюлявков 25,<br>гр. София<br>ЕИК: 203 764 329<br>BG 203 764 329</span>
+                    </td>
+                    <td align="center" style="width: 33.3333%;"><span style="font-family: Calibri;"><span
+                            style="font-size: 12px;">%ScaledLogoImage%<br><br><br><br><br><br></span></span></td>
+                    <td style="width: 33.3333%; text-align: right;"><span
+                            style="font-family: Calibri; font-size: 13px;"><span style="font-size: large;"><span
+                            style="font-size: x-large;">ФАКТУРА</span><br><span style="color: #9e9e9e;">${invoice.cf_type}</span><br><br>№ %InvoiceNumber%</span><br>Дата на издаване: %InvoiceDate%</span><span
+                            style="font-family: Calibri; font-size: 13px;"><br><br></span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div style="padding: 0 0.20in 0 0.20in;">
+    <div align="center" style="display: table; width: 100%; text-align: center;">
+        <table border="0" style="width: 100%; border-collapse: collapse;">
+            <tbody>
+            <tr>
+                <td style="width: 33.3333%; text-align: left;"><span
+                        style="font-family: Calibri; font-size: 13px;"><strong>Получател:<br></strong><span
+                        style="font-family: Calibri;">${contact.cf_bg_description}<br>${contact.cf_bg_address}<br>${contact.cf_bg_country}<br>${contact.cf_tva}</span></span>
+                </td>
+                <td align="center" style="width: 33.3333%;">&nbsp;</td>
+                <td style="width: 33.3333%; text-align: right;"><span style="font-family: Calibri; font-size: 13px;">Падеж: </span><span
+                        style="font-family: Calibri; font-size: 13px;">%DueDate%<br><br>По ваша поръчка: ${invoice.cf_5aa19c}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<table border="0" cellpadding="0" cellspacing="0" class="pcs-itemtable"
+       style="width: 100%; margin-top: 20px; table-layout: fixed; border-spacing: 0px; border-collapse: collapse; height: 52px;">
+    <thead>
+    <tr style="height: 32px;">
+        <td style="font-size: 10pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px; overflow-wrap: break-word; width: 4.21116%; height: 21px; text-align: center;">
+            <span style="font-family: Calibri;">№</span></td>
+        <td style="font-size: 10pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px; overflow-wrap: break-word; width: 14.8429%; height: 21px; text-align: center;">
+            <span style="font-family: Calibri;">Код</span></td>
+        <td style="font-size: 10pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px; overflow-wrap: break-word; width: 40.3175%; height: 21px; text-align: center;">
+            <span style="font-family: Calibri;">Описание</span></td>
+        <td align="center"
+            style="font-size: 10pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px 5px 5px; overflow-wrap: break-word; width: 10.846%; height: 21px;">
+            <span style="font-family: Calibri;">Поръчка<br></span></td>
+        <td align="center"
+            style="font-size: 10pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px 5px 5px; overflow-wrap: break-word; width: 10.846%; height: 21px;">
+            <span style="font-family: Calibri;">К-во<br></span></td>
+        <td align="center"
+            style="font-size: 10pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px 5px 5px; overflow-wrap: break-word; width: 11.6163%; height: 21px;">
+            <span style="font-family: Calibri;">Ед. цена</span></td>
+        <td align="center"
+            style="font-size: 10pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px 5px 5px; overflow-wrap: break-word; width: 12.6493%; height: 21px;">
+            <span style="font-family: Calibri;">Стойност</span></td>
+    </tr>
+    </thead>
+    <tbody id="lineitem">
+    <tr style="height: 31px;">
+        <td style="font-size: 9pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 0px 10px 10px; width: 4.21116%; height: 31px;">
+            <span style="font-family: Calibri;">&nbsp;<span style="font-size: 12px;"><span class="siq-user-message">%SiNo%</span></span></span>
+        </td>
+        <td align="left"
+            style="font-size: 9pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 0px 10px 10px; width: 14.8429%; height: 31px;">
+            <span style="font-family: Calibri;">%MPN%</span></td>
+        <td valign="top"
+            style="font-size: 9pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 0px 10px 10px; width: 40.3175%; height: 31px;">
+            ${INVOICE.Item.CF.Описание.Value}
+        </td>
+        <td valign="top"
+            style="font-size: 9pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 0px 10px 10px; overflow-wrap: break-word; width: 40.3175%; height: 31px;">
+            ${INVOICE.Item.CF.Customer order #.Value}
+        </td>
+        <td align="center" valign="top"
+            style="font-size: 9pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 10px 5px; overflow-wrap: break-word; width: 10.846%; height: 31px;">
+            <span style="font-family: Calibri;"><span id="tmp_item_qty">%ItemQty%</span></span></td>
+        <td align="center" valign="top"
+            style="font-size: 9pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 10px 5px; overflow-wrap: break-word; width: 11.6163%; height: 31px;">
+            ${INVOICE.Item.CF.Цена ЛЕВА.Value}
+        </td>
+        <td align="center" valign="top"
+            style="font-size: 9pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 10px 10px 5px; overflow-wrap: break-word; width: 12.6493%; height: 31px;">
+            ${INVOICE.Item.CF.Общо ЛЕВА.Value}
+        </td>
+    </tr>
+    </tbody>
+    <tbody id="headerItem"></tbody>
+</table>
+<div style="width: 100%; margin-top: 1px;">
+    <div style="width: 50%; float: right;">
+        <table border="0" cellspacing="0" width="100%"
+               style="font-size: 9pt; color: #000000; background-color: #ffffff; border-spacing: 0px; border-collapse: collapse; height: 20px; width: 100%;">
+            <tbody>
+            <tr style="height: 10px;">
+                <td align="right" valign="middle" style="padding: 5px 10px 5px 0px; height: 10px; width: 44.7674%;">
+                    <span style="font-family: Calibri;"><strong>Общо:</strong></span></td>
+                <td align="right" valign="middle" id="tmp_subtotal"
+                    style="width: 54.6512%; padding: 10px 10px 10px 5px; height: 10px;"><b><font face="Calibri">${invoice.cf_sum_no_dds}</font></b><span
+                        style="font-family: Calibri;"><strong>&nbsp;лв. <br></strong></span></td>
+            </tr>
+            <tr style="height: 10px;">
+                <td align="right" valign="middle" style="padding: 5px 10px 5px 0px; height: 10px; width: 44.7674%;">
+                    <span style="font-family: Calibri;">${contact.cf_tax}</span></td>
+                <td align="right" valign="middle" style="width: 54.6512%; padding: 10px 10px 10px 5px; height: 10px;">
+                    <span style="font-family: Calibri;">${invoice.cf_dds} лв. <br></span></td>
+            </tr>
+            <tr style="height: 20px; background-color: #f5f4f3; font-size: 9pt; color: #000000;">
+                <td align="right" valign="middle" style="padding: 5px 10px 5px 0px; height: 10px; width: 44.7674%;">
+                    <span style="font-family: Calibri;"><strong><span
+                            style="font-size: medium;">Сума за плащане</span><br></strong></span></td>
+                <td align="right" valign="middle" id="tmp_balance_due"
+                    style="width: 54.6512%; padding: 10px 10px 10px 5px; height: 10px;"><font size="3"
+                                                                                              face="Calibri"><b>${invoice.cf_total_amout_bg}</b></font>&nbsp;<strong
+                        style="font-family: Calibri;">лв.</strong></td>
+            </tr>
+            </tbody>
+            <tbody id="taxItems"></tbody>
+        </table>
+    </div>
+    <span style="font-family: Calibri;"><br></span>
+</div>
+<div style="width: 100%; margin-top: 1px;"><span style="font-family: Calibri;">&nbsp;</span></div>
+<div style="width: 100%; margin-top: 1px;"><span style="font-family: Calibri;">&nbsp;</span></div>
+<div style="width: 100%; margin-top: 1px;"><span style="font-family: Calibri;">&nbsp;</span></div>
+<div style="width: 100%; margin-top: 1px;"><span style="font-family: Calibri;">&nbsp;</span></div>
+<div style="width: 100%; margin-top: 1px;"><span style="font-family: Calibri; font-size: small;">&nbsp;</span></div>
+<div style="width: 100%; margin-top: 1px;"><span style="font-family: Calibri; font-size: small;"><br></span></div>
+<div style="width: 100%; margin-top: 1px;"><span style="font-family: Calibri; font-size: small;">&nbsp;</span><br>
+    <div align="right">&nbsp;</div>
+    <div align="left"><span style="font-family: Calibri; font-size: small;">Подпис: __________</span><br><span
+            style="font-family: Calibri; font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Евелина Димитрова</span>
+    </div>
+</div>

@@ -1,0 +1,338 @@
+{
+  "autonumbergenerationgroup_id": "126938000002589443",
+  "reference_number": "12560159",
+  "payment_terms": 45,
+  "payment_terms_label": "Conditions de Payement: 40% D'AVANCE, 60% 45 JOURS DATE DE FACTURE",
+  "payment_options": {
+    "payment_gateways": []
+  },
+  "customer_id": "126938000000049054",
+  "contact_persons": [
+    "126938000003581292"
+  ],
+  "date": "2025-06-13",
+  "due_date": "2025-07-28",
+  "notes": "",
+  "terms": "",
+  "is_inclusive_tax": false,
+  "line_items": [
+    {
+      "item_order": 1,
+      "item_id": "126938000003664323",
+      "rate": 17.59,
+      "name": "Barrier D25 | 4 NRST | LP 333x333 LOGO CAUM | RAL5002",
+      "description": "Barrier ø25, 4 NRST, RAL 5002\nLP 333х333 \"LOGO CAUM\"",
+      "quantity": 50,
+      "discount": 0,
+      "tax_id": "",
+      "expense_id": "",
+      "salesorder_item_id": "",
+      "tags": [],
+      "account_id": "126938000000000376",
+      "item_custom_fields": [
+        {
+          "label": "Описание",
+          "value": ""
+        },
+        {
+          "label": "Цена ЛЕВА",
+          "value": ""
+        },
+        {
+          "label": "Общо ЛЕВА",
+          "value": ""
+        },
+        {
+          "label": "Customer order #",
+          "value": "12560159 / 22.05.25"
+        },
+        {
+          "label": "Volume",
+          "value": ""
+        }
+      ],
+      "bill_id": "",
+      "bill_item_id": "",
+      "header_name": "",
+      "header_id": "",
+      "unit": "pcs"
+    },
+    {
+      "item_order": 2,
+      "item_id": "126938000000039329",
+      "rate": 13.5,
+      "name": "Barrier D25 | 4 NRST | PL 166x333 | RAL 3001",
+      "description": "Barrier ø25, 4 NRST, RAL 3001\nPL 166x333",
+      "quantity": 250,
+      "discount": 0,
+      "tax_id": "",
+      "expense_id": "",
+      "salesorder_item_id": "",
+      "tags": [],
+      "account_id": "126938000000000376",
+      "item_custom_fields": [
+        {
+          "label": "Описание",
+          "value": ""
+        },
+        {
+          "label": "Цена ЛЕВА",
+          "value": ""
+        },
+        {
+          "label": "Общо ЛЕВА",
+          "value": ""
+        },
+        {
+          "label": "Customer order #",
+          "value": "12560159 / 22.05.25"
+        },
+        {
+          "label": "Volume",
+          "value": ""
+        }
+      ],
+      "bill_id": "",
+      "bill_item_id": "",
+      "header_name": "",
+      "header_id": "",
+      "unit": "pcs"
+    },
+    {
+      "item_order": 3,
+      "item_id": "126938000001679013",
+      "rate": 17.19,
+      "name": "Barrier D25 | 4 RST | LP 166x333 SAS BONNEAU TP| RAL 3000",
+      "description": "Barrier ø25, 4 RST, RAL 3000\nLP 166x333 \"SAS BONNEAU TP\"",
+      "quantity": 150,
+      "discount": 0,
+      "tax_id": "",
+      "expense_id": "",
+      "salesorder_item_id": "",
+      "tags": [],
+      "account_id": "126938000000000376",
+      "item_custom_fields": [
+        {
+          "label": "Описание",
+          "value": ""
+        },
+        {
+          "label": "Цена ЛЕВА",
+          "value": ""
+        },
+        {
+          "label": "Общо ЛЕВА",
+          "value": ""
+        },
+        {
+          "label": "Customer order #",
+          "value": "12560055 / 05.03.25"
+        },
+        {
+          "label": "Volume",
+          "value": ""
+        }
+      ],
+      "bill_id": "",
+      "bill_item_id": "",
+      "header_name": "",
+      "header_id": "",
+      "unit": "pcs"
+    },
+    {
+      "item_order": 4,
+      "item_id": "126938000000310180",
+      "rate": 16.59,
+      "name": "Barrier D25, 4 NRST, LP 166x333 STARTER TP, RAL 3001",
+      "description": "Barrier ø25, 4 NRST, RAL 3001\nLP 166х333 \"STARTER TP\"",
+      "quantity": 500,
+      "discount": 0,
+      "tax_id": "",
+      "expense_id": "",
+      "salesorder_item_id": "",
+      "tags": [],
+      "account_id": "126938000000000376",
+      "item_custom_fields": [
+        {
+          "label": "Описание",
+          "value": ""
+        },
+        {
+          "label": "Цена ЛЕВА",
+          "value": ""
+        },
+        {
+          "label": "Общо ЛЕВА",
+          "value": ""
+        },
+        {
+          "label": "Customer order #",
+          "value": "12560159 / 22.05.25"
+        },
+        {
+          "label": "Volume",
+          "value": ""
+        }
+      ],
+      "bill_id": "",
+      "bill_item_id": "",
+      "header_name": "",
+      "header_id": "",
+      "unit": "pcs"
+    },
+    {
+      "item_order": 5,
+      "item_id": "126938000003758135",
+      "rate": 17.25,
+      "name": "Barrier D25 | 4 NRST | LP 333x333 LOGO STARTER CREA | RAL 6000",
+      "description": "Barrier ø25, 4 NRST, RAL 6000\nLP 333х333 \"LOGO STARTER CREA\"",
+      "quantity": 100,
+      "discount": 0,
+      "tax_id": "",
+      "expense_id": "",
+      "salesorder_item_id": "",
+      "tags": [],
+      "account_id": "126938000000000376",
+      "item_custom_fields": [
+        {
+          "label": "Описание",
+          "value": ""
+        },
+        {
+          "label": "Цена ЛЕВА",
+          "value": ""
+        },
+        {
+          "label": "Общо ЛЕВА",
+          "value": ""
+        },
+        {
+          "label": "Customer order #",
+          "value": "12560159 / 22.05.25"
+        },
+        {
+          "label": "Volume",
+          "value": ""
+        }
+      ],
+      "bill_id": "",
+      "bill_item_id": "",
+      "header_name": "",
+      "header_id": "",
+      "unit": "pcs"
+    },
+    {
+      "item_order": 6,
+      "item_id": "126938000000431285",
+      "rate": 17.85,
+      "name": "Barrire D28 - GARDE CORPS",
+      "description": "GARDE CORPS, RAL 3001, POUR PASSARELLE 2m.",
+      "quantity": 100,
+      "discount": 0,
+      "tax_id": "",
+      "expense_id": "",
+      "salesorder_item_id": "",
+      "tags": [],
+      "account_id": "126938000000000376",
+      "item_custom_fields": [
+        {
+          "label": "Описание",
+          "value": ""
+        },
+        {
+          "label": "Цена ЛЕВА",
+          "value": ""
+        },
+        {
+          "label": "Общо ЛЕВА",
+          "value": ""
+        },
+        {
+          "label": "Customer order #",
+          "value": "12560159 / 22.05.25"
+        },
+        {
+          "label": "Volume",
+          "value": ""
+        }
+      ],
+      "bill_id": "",
+      "bill_item_id": "",
+      "header_name": "",
+      "header_id": "",
+      "unit": "pcs"
+    }
+  ],
+  "allow_partial_payments": false,
+  "custom_fields": [
+    {
+      "value": "",
+      "customfield_id": "126938000000907198"
+    },
+    {
+      "value": "",
+      "customfield_id": "126938000000349360"
+    },
+    {
+      "value": "",
+      "customfield_id": "126938000000349336"
+    },
+    {
+      "value": "",
+      "customfield_id": "126938000000347234"
+    },
+    {
+      "value": true,
+      "customfield_id": "126938000003589003"
+    },
+    {
+      "value": "Копие",
+      "customfield_id": "126938000000349376"
+    },
+    {
+      "value": [],
+      "customfield_id": "126938000003572930"
+    },
+    {
+      "value": [
+        "no"
+      ],
+      "customfield_id": "126938000003595023"
+    },
+    {
+      "value": "",
+      "customfield_id": "126938000003664099"
+    },
+    {
+      "value": "",
+      "customfield_id": "126938000003664103"
+    },
+    {
+      "value": "",
+      "customfield_id": "126938000003664157"
+    }
+  ],
+  "recurring_invoice_id": "",
+  "is_discount_before_tax": "",
+  "discount": 0,
+  "discount_type": "",
+  "shipping_charge": 0,
+  "adjustment": 0,
+  "adjustment_description": "Adjustment",
+  "salesperson_id": "126938000003084001",
+  "merchant_id": "",
+  "zcrm_potential_id": "",
+  "zcrm_potential_name": "",
+  "pricebook_id": "",
+  "template_id": "126938000000294056",
+  "documents": [],
+  "mail_attachments": [],
+  "billing_address_id": "126938000000049056",
+  "shipping_address_id": "126938000000049056",
+  "shipping_charge_tax_id": "",
+  "subject_content": "",
+  "tax_override_preference": "no_override",
+  "tds_override_preference": "no_override",
+  "retention_items": [],
+  "retention_override_preference": "no_override"
+}

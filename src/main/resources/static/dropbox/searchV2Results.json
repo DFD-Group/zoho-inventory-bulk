@@ -1,0 +1,173 @@
+{
+  "has_more": false,
+  "matches": [
+    {
+      "highlight_spans": [],
+      "match_type": {
+        ".tag": "filename_and_content"
+      },
+      "metadata": {
+        ".tag": "metadata",
+        "metadata": {
+          ".tag": "file",
+          "client_modified": "2023-06-08T15:20:33Z",
+          "content_hash": "bd6e8e1d36189937fd8362457fabe94b76458fa8140b7b6fd9b568261d1deb55",
+          "file_owner_team_encrypted_id": "dbtid:AABW-OwzNYpYUd3qzVaBsCKuxsegO-V6tUo",
+          "id": "id:KebuWWx3TT4AAAAAAAAO_g",
+          "is_downloadable": true,
+          "name": "INEO-245x95.dwg",
+          "path_display": "/Kromm/Макети/I/INEO/INEO-245x95.dwg",
+          "path_lower": "/kromm/макети/i/ineo/ineo-245x95.dwg",
+          "rev": "0163b158888f9b000000002ab0b4b53",
+          "server_modified": "2025-07-29T18:25:31Z",
+          "sharing_info": {
+            "modified_by": "dbid:AAArxP7HlDpWMr49FGBBjAe4kIVno6RwjP0",
+            "parent_shared_folder_id": "11459578707",
+            "read_only": false
+          },
+          "size": 53061
+        }
+      }
+    },
+    {
+      "highlight_spans": [],
+      "match_type": {
+        ".tag": "filename_and_content"
+      },
+      "metadata": {
+        ".tag": "metadata",
+        "metadata": {
+          ".tag": "file",
+          "client_modified": "2024-04-15T14:33:37Z",
+          "content_hash": "a10829f158b5b652e58c405fd9a46243ea6b4646783e844de77bfa60f02760a4",
+          "file_owner_team_encrypted_id": "dbtid:AABW-OwzNYpYUd3qzVaBsCKuxsegO-V6tUo",
+          "id": "id:KebuWWx3TT4AAAAAAAAPMg",
+          "is_downloadable": true,
+          "name": "LOGO INEO-245x95.dwg",
+          "path_display": "/Kromm/Макети/I/INEO/LOGO INEO-245x95.dwg",
+          "path_lower": "/kromm/макети/i/ineo/logo ineo-245x95.dwg",
+          "rev": "0163b8d8509a1e500000002ab0b4b53",
+          "server_modified": "2025-08-04T17:34:28Z",
+          "sharing_info": {
+            "modified_by": "dbid:AAACrPCWeSeBMMaNPEfI7cWBNuEgyqcjJBw",
+            "parent_shared_folder_id": "11459578707",
+            "read_only": false
+          },
+          "size": 65499
+        }
+      }
+    },
+    {
+      "highlight_spans": [],
+      "match_type": {
+        ".tag": "filename_and_content"
+      },
+      "metadata": {
+        ".tag": "metadata",
+        "metadata": {
+          ".tag": "file",
+          "client_modified": "2023-06-08T15:07:38Z",
+          "content_hash": "329f95e1ecc4133472bf5113dcfe4d1cfdf8bbcc8833e372ebf5235e6a7248c8",
+          "file_owner_team_encrypted_id": "dbtid:AABW-OwzNYpYUd3qzVaBsCKuxsegO-V6tUo",
+          "id": "id:KebuWWx3TT4AAAAAAAAPJw",
+          "is_downloadable": true,
+          "name": "INEO-245x95.pdf",
+          "path_display": "/Kromm/Макети/I/INEO/INEO-245x95.pdf",
+          "path_lower": "/kromm/макети/i/ineo/ineo-245x95.pdf",
+          "rev": "0163b158ac0a7d700000002ab0b4b53",
+          "server_modified": "2025-07-29T18:26:08Z",
+          "sharing_info": {
+            "modified_by": "dbid:AAArxP7HlDpWMr49FGBBjAe4kIVno6RwjP0",
+            "parent_shared_folder_id": "11459578707",
+            "read_only": false
+          },
+          "size": 3024
+        }
+      }
+    },
+    {
+      "highlight_spans": [],
+      "match_type": {
+        ".tag": "filename_and_content"
+      },
+      "metadata": {
+        ".tag": "metadata",
+        "metadata": {
+          ".tag": "file",
+          "client_modified": "2024-04-11T07:45:00Z",
+          "content_hash": "e6b10b402660fcd48a021f856d760a5900d10c0b2b150ff1c45e57878c6216a9",
+          "file_owner_team_encrypted_id": "dbtid:AABW-OwzNYpYUd3qzVaBsCKuxsegO-V6tUo",
+          "id": "id:KebuWWx3TT4AAAAAAAAPNA",
+          "is_downloadable": true,
+          "name": "LOGO INEO-245x95.pdf",
+          "path_display": "/Kromm/Макети/I/INEO/LOGO INEO-245x95.pdf",
+          "path_lower": "/kromm/макети/i/ineo/logo ineo-245x95.pdf",
+          "rev": "0163b8d850f699400000002ab0b4b53",
+          "server_modified": "2025-08-04T17:34:29Z",
+          "sharing_info": {
+            "modified_by": "dbid:AAACrPCWeSeBMMaNPEfI7cWBNuEgyqcjJBw",
+            "parent_shared_folder_id": "11459578707",
+            "read_only": false
+          },
+          "size": 8269
+        }
+      }
+    },
+    {
+      "highlight_spans": [],
+      "match_type": {
+        ".tag": "filename_and_content"
+      },
+      "metadata": {
+        ".tag": "metadata",
+        "metadata": {
+          ".tag": "file",
+          "client_modified": "2024-10-22T05:44:36Z",
+          "content_hash": "56af24eb6cddb663cd37d48903dedd58a932996d6c8d0b4dc28bd5f110b10c06",
+          "file_owner_team_encrypted_id": "dbtid:AABW-OwzNYpYUd3qzVaBsCKuxsegO-V6tUo",
+          "id": "id:KebuWWx3TT4AAAAAAAAPiw",
+          "is_downloadable": true,
+          "name": "LOGO INEO UNE MARQUE DE EQUANS-245x95.dwg",
+          "path_display": "/Kromm/Макети/I/INEO UNE MARQUE DE EQUANS/LOGO INEO UNE MARQUE DE EQUANS-245x95.dwg",
+          "path_lower": "/kromm/макети/i/ineo une marque de equans/logo ineo une marque de equans-245x95.dwg",
+          "rev": "0163b8d8bd8585c00000002ab0b4b53",
+          "server_modified": "2025-08-04T17:36:22Z",
+          "sharing_info": {
+            "modified_by": "dbid:AAACrPCWeSeBMMaNPEfI7cWBNuEgyqcjJBw",
+            "parent_shared_folder_id": "11459578707",
+            "read_only": false
+          },
+          "size": 60825
+        }
+      }
+    },
+    {
+      "highlight_spans": [],
+      "match_type": {
+        ".tag": "filename_and_content"
+      },
+      "metadata": {
+        ".tag": "metadata",
+        "metadata": {
+          ".tag": "file",
+          "client_modified": "2024-10-22T05:44:36Z",
+          "content_hash": "620d9c90337cd9b5fee530523637c70aab9bf2998bf0f97d0b54b3926a3085ac",
+          "file_owner_team_encrypted_id": "dbtid:AABW-OwzNYpYUd3qzVaBsCKuxsegO-V6tUo",
+          "id": "id:KebuWWx3TT4AAAAAAAAPiA",
+          "is_downloadable": true,
+          "name": "LOGO INEO UNE MARQUE DE EQUANS-245x95.pdf",
+          "path_display": "/Kromm/Макети/I/INEO UNE MARQUE DE EQUANS/LOGO INEO UNE MARQUE DE EQUANS-245x95.pdf",
+          "path_lower": "/kromm/макети/i/ineo une marque de equans/logo ineo une marque de equans-245x95.pdf",
+          "rev": "0163b8d8bd8585900000002ab0b4b53",
+          "server_modified": "2025-08-04T17:36:22Z",
+          "sharing_info": {
+            "modified_by": "dbid:AAACrPCWeSeBMMaNPEfI7cWBNuEgyqcjJBw",
+            "parent_shared_folder_id": "11459578707",
+            "read_only": false
+          },
+          "size": 8014
+        }
+      }
+    }
+  ]
+}

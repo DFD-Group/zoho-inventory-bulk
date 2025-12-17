@@ -1,0 +1,61 @@
+{
+  "team_folders": [
+    {
+      "team_folder_id": "11459578707",
+      "name": "DFD Group Team Folder",
+      "status": {
+        ".tag": "active"
+      },
+    {
+      ".tag": "team_folder_metadata",
+      "team_folder_id": "11459578707",
+      "name": "DFD Group Team Folder",
+      "status": {
+        ".tag": "active"
+      },
+      "is_team_shared_dropbox": false,
+      "sync_setting": {
+        ".tag": "default"
+      },
+      "content_sync_settings": []
+    },
+    "is_team_shared_dropbox"
+    :
+    false,
+    "sync_setting"
+    :
+    {
+      ".tag": "default"
+    },
+    "content_sync_settings"
+    :
+    []
+    },
+    {
+      "team_folder_id": "11455712931",
+      "name": "Счетоводство",
+      "status": {
+        ".tag": "active"
+      },
+      "is_team_shared_dropbox": false,
+      "sync_setting": {
+        ".tag": "default"
+      },
+      "content_sync_settings": []
+    },
+    {
+      "team_folder_id": "11521740259",
+      "name": "Джоди Трейд",
+      "status": {
+        ".tag": "active"
+      },
+      "is_team_shared_dropbox": false,
+      "sync_setting": {
+        ".tag": "default"
+      },
+      "content_sync_settings": []
+    }
+  ],
+  "cursor": "AAAxdOv72BUG9ypxHOM-T5LnEWX2kdhC367F79StxLOAi5l03s4jFAx6vv2VWm3XkF5ZSBVAXMBE5QKtRHpdU0Qb0-upZHS6QTDpgbwjiKTCQZsT3tp1UrQhM_XsHG4LhsEtEmA-1-p9Z76RxJH00Wf1X4AyqXySwsx68YQFXslE2A9qmf_at4qv4GxBBst2plbebBBjERqVmdj0AWBP02-PAUcxmqwY-0Otb0Dadh7Y528KEiycScW9k2oHU0qy_PfmPpbpDWZO0vHORnR7lMPI2aiLMTlsT4YLc1ZVW16dxHxdIJn-JYUBqksrd5tz_etwlyBB095i0peUah8OIEHb5WbCX30_caEnXRRgWvOHzg",
+  "has_more": false
+}

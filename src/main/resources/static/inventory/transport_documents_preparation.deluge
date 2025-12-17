@@ -1,0 +1,316 @@
+
+/*
+Date: 06 March 2025
+Developer: Chavdar
+Version: V1
+Purpose: Create proforma invoice (sales order), delivery note and deklaration from sales order and save it to Dropbox
+*/
+salesOrderID = salesorder.get("salesorder_id");
+fullReferenceNumber = salesorder.get("reference_number");
+firstDashIndex = fullReferenceNumber.indexOf("-");
+referenceNumber = fullReferenceNumber.subString(firstDashIndex + 1).replaceAll("/","//");
+proformaNumberRaw = "300000" + referenceNumber;
+// Removes any non-digit symbols
+proformaNumber = proformaNumberRaw.replaceAll("[^0-9]","");
+salesOrderShipmentDate = salesorder.get("shipment_date");
+organizationID = organization.get("organization_id");
+dataCenter = organization.get("data_center_extension");
+endpoint = organization.get("api_root_endpoint");
+items = salesorder.get("line_items");
+lineItemList = List();
+packageLineItems = List();
+for each  item in items
+{
+	if(item.get("sku").contains("TRC"))
+	{
+		continue;
+	}
+	itemId = item.get("item_id");
+	itemQty = item.get("quantity");
+	itemRate = 0.6 * toDecimal(item.get("rate"));
+	lineItem = Map();
+	lineItem.put("item_id",itemId);
+	lineItem.put("quantity",itemQty);
+	lineItem.put("rate",itemRate);
+	lineItem.put("tax_id","126938000000042642");
+	lineItemList.add(lineItem);
+	lineItemId = item.get("line_item_id");
+	packageLineItem = Map();
+	packageLineItem.put("so_line_item_id",lineItemId);
+	packageLineItem.put("quantity",itemQty);
+	packageLineItems.add(packageLineItem);
+}
+customerId = salesorder.get("customer_id");
+salesOrderMap = Map();
+salesOrderMap.put("customer_id",customerId);
+salesOrderMap.put("date",salesOrderShipmentDate);
+salesOrderMap.put("salesorder_number","проформа " + referenceNumber);
+salesOrderMap.put("shipment_date",salesOrderShipmentDate);
+salesOrderMap.put("reference_number",fullReferenceNumber);
+salesOrderMap.put("line_items",lineItemList);
+salesOrderMap.put("template_id","126938000000093733");
+salesOrderCustomFieldList = List();
+proformaNumberMap = Map();
+proformaNumberMap.put("api_name","cf_proforma_invoice_number");
+proformaNumberMap.put("value",proformaNumber);
+salesOrderCustomFieldList.add(proformaNumberMap);
+salesOrderMap.put("custom_fields",salesOrderCustomFieldList);
+jsonPayload = Map();
+jsonPayload.put("JSONString",salesOrderMap);
+proformaSalesOrder = "";
+try
+{
+	proformaSalesOrder = invokeurl
+	[
+		url :endpoint + "/salesorders" + "?organization_id=" + organizationID
+		type :POST
+		parameters:jsonPayload
+		connection:"zohoinventory"
+	];
+	info proformaSalesOrder;
+}
+catch (e)
+{
+	info "Error creating Sales Order Proforma: " + " - Error: " + e.toString();
+}
+// Get Invoice as PDF
+proformaSalesOrderID = proformaSalesOrder.get("salesorder").get("salesorder_id");
+// API Headers
+headersMap = Map();
+headersMap.put("Accept","application/pdf");
+proformaPDF = "";
+try
+{
+	proformaPDF = invokeurl
+	[
+		url :endpoint + "/salesorders/" + proformaSalesOrderID + "?organization_id=" + organizationID
+		type :GET
+		headers:headersMap
+		connection:"zohoinventory"
+	];
+}
+catch (e)
+{
+	info "Error: " + e.toString();
+}
+// Get Dropbox DFD Team member id of "chavdar@dfd-group.com"
+teamMemberID = 0;
+try
+{
+	members = invokeurl
+	[
+		url :"https://api.dropboxapi.com/2/team/members/list"
+		type :POST
+		body:"{}"
+		headers:{"Content-Type":"application/json"}
+		connection:"dfdteamfolder"
+	];
+	members = members.get("members");
+	for each  member in members
+	{
+		if(member.get("profile").get("email").equals("chavdar@dfd-group.com"))
+		{
+			teamMemberID = member.get("profile").get("team_member_id");
+		}
+	}
+}
+catch (e)
+{
+	info "Error: " + e.toString();
+}
+// Look for the folder with the reference number of the sales order
+fileHeaders = Map();
+fileHeaders.put("Content-Type","application/json");
+body = Map();
+body.put("include_mounted_folders",true);
+body.put("path","/Поръчки");
+fileHeaders.put("Dropbox-API-Select-User",teamMemberID);
+namespaceID = "11459578707";
+fileHeaders.put("Dropbox-API-Path-Root","{\".tag\": \"namespace_id\", \"namespace_id\": \"" + namespaceID + "\"}");
+folderPath = "";
+try
+{
+	entries = invokeurl
+	[
+		url :"https://api.dropboxapi.com/2/files/list_folder"
+		type :POST
+		body:body.toString()
+		headers:fileHeaders
+		connection:"dfdteamfolder"
+	];
+	entries = entries.get("entries");
+	for each  entry in entries
+	{
+		folderName = entry.get("name");
+		if(folderName.contains(referenceNumber))
+		{
+			folderPath = entry.get("path_display");
+		}
+	}
+}
+catch (e)
+{
+	info "Error: " + e.toString();
+}
+// "Поръчки"
+porachki = "/\\u041F\\u043E\\u0440\\u044A\\u0447\\u043A\\u0438";
+// "Експедиция"
+ekspedicia = "/\\u0415\\u043A\\u0441\\u043F\\u0435\\u0434\\u0438\\u0446\\u0438\\u044F";
+folderPath = folderPath.replaceFirst("/Поръчки","");
+folderPath = porachki + folderPath + ekspedicia + "/";
+formattedSalesOrderShipmentDate = salesOrderShipmentDate.toString("ddMMyyyy");
+fileName = "Proforma" + "-" + proformaNumber + "-" + formattedSalesOrderShipmentDate + ".pdf";
+apiArgJSON = "{\"path\": \"" + folderPath + fileName + "\", \"mode\": \"add\", \"autorename\": true, \"mute\": false}";
+// Set the header with the correctly formatted JSON
+fileHeaders.put("Content-Type","application/octet-stream");
+fileHeaders.put("Dropbox-API-Arg",apiArgJSON);
+fileHeaders.put("Dropbox-API-Select-User",teamMemberID);
+namespaceID = "11459578707";
+fileHeaders.put("Dropbox-API-Path-Root","{\".tag\": \"namespace_id\", \"namespace_id\": \"" + namespaceID + "\"}");
+try
+{
+	file = invokeurl
+	[
+		url :"https://content.dropboxapi.com/2/files/upload"
+		type :POST
+		body:proformaPDF
+		headers:fileHeaders
+		connection:"dfdteamfolder"
+	];
+}
+catch (e)
+{
+	info "Error: " + e.toString();
+}
+packageMap = Map();
+packageMap.put("package_number",fullReferenceNumber);
+packageMap.put("date",salesOrderShipmentDate);
+packageMap.put("line_items",packageLineItems);
+packageJsonPayload = Map();
+packageJsonPayload.put("JSONString",packageMap);
+packageID = 0;
+try
+{
+	package = invokeurl
+	[
+		url :endpoint + "/packages" + "?organization_id=" + organizationID + "&salesorder_id=" + salesOrderID
+		type :POST
+		parameters:packageJsonPayload
+		connection:"zohoinventory"
+	];
+	packageID = package.get("package").get("shipment_order").get("associated_packages").get(0).get("package_id");
+}
+catch (e)
+{
+	info "Error: " + e.toString();
+}
+// Get packages as pdf
+deliveryNotePDF = "";
+try
+{
+	deliveryNotePDF = invokeurl
+	[
+		url :endpoint + "/packages/" + packageID + "?accept=pdf&organization_id=" + organizationID
+		type :GET
+		connection:"zohoinventory"
+	];
+}
+catch (e)
+{
+	info "Error: " + e.toString();
+}
+// Save Delivery note to Dropbox
+customerName = salesorder.get("customer_name").replaceAll(" ","-");
+salesOrderNumber = salesorder.get("salesorder_number").replaceAll(" ","").replaceAll("/","-");
+deliveryNoteFileName = "Delivery-note" + "-" + fullReferenceNumber + "-" + "(" + customerName + "-" + salesOrderNumber + ")" + ".pdf";
+info deliveryNoteFileName;
+apiArgJSON = "{\"path\": \"" + folderPath + deliveryNoteFileName + "\", \"mode\": \"add\", \"autorename\": true, \"mute\": false}";
+info apiArgJSON;
+// Set the header with the correctly formatted JSON
+fileHeaders.put("Content-Type","application/octet-stream");
+fileHeaders.put("Dropbox-API-Arg",apiArgJSON);
+fileHeaders.put("Dropbox-API-Select-User",teamMemberID);
+namespaceID = "11459578707";
+fileHeaders.put("Dropbox-API-Path-Root","{\".tag\": \"namespace_id\", \"namespace_id\": \"" + namespaceID + "\"}");
+try
+{
+	file = invokeurl
+	[
+		url :"https://content.dropboxapi.com/2/files/upload"
+		type :POST
+		body:deliveryNotePDF
+		headers:fileHeaders
+		connection:"dfdteamfolder"
+	];
+	info file;
+}
+catch (e)
+{
+	info "Error: " + e.toString();
+}
+deklaraciaTemplateID = "126938000003201202";
+try
+{
+	salesOrder = invokeurl
+	[
+		url :endpoint + "/salesorders/" + proformaSalesOrderID + "/templates/" + deklaraciaTemplateID + "?organization_id=" + organizationID
+		type :PUT
+		connection:"zohoinventory"
+	];
+}
+catch (e)
+{
+	info "Error upldating Sales Order: " + " - Error: " + e.toString();
+}
+// Get deklaracia as pdf
+headersMap = Map();
+headersMap.put("Accept","application/pdf");
+declarationPDF = "";
+try
+{
+	declarationPDF = invokeurl
+	[
+		url :endpoint + "/salesorders/" + proformaSalesOrderID + "?organization_id=" + organizationID
+		type :GET
+		headers:headersMap
+		connection:"zohoinventory"
+	];
+}
+catch (e)
+{
+	info "Error: " + e.toString();
+}
+// Save Deklaracia to Dropbox
+declaracia = "\\u0414\\u0435\\u043A\\u043B\\u0430\\u0440\\u0430\\u0446\\u0438\\u044F";
+fileName = declaracia + "-" + formattedSalesOrderShipmentDate + "-" + fullReferenceNumber + ".pdf";
+apiArgJSON = "{\"path\": \"" + folderPath + fileName + "\", \"mode\": \"add\", \"autorename\": true, \"mute\": false}";
+// Set the header with the correctly formatted JSON
+fileHeaders.put("Content-Type","application/octet-stream");
+fileHeaders.put("Dropbox-API-Arg",apiArgJSON);
+fileHeaders.put("Dropbox-API-Select-User",teamMemberID);
+namespaceID = "11459578707";
+fileHeaders.put("Dropbox-API-Path-Root","{\".tag\": \"namespace_id\", \"namespace_id\": \"" + namespaceID + "\"}");
+try
+{
+	file = invokeurl
+	[
+		url :"https://content.dropboxapi.com/2/files/upload"
+		type :POST
+		body:declarationPDF
+		headers:fileHeaders
+		connection:"dfdteamfolder"
+	];
+}
+catch (e)
+{
+	info "Error: " + e.toString();
+}
+messageToFactory = "<html>" + "<body style='font-family: Calibri, sans-serif;'>" + "<p>Привет,</p>" + "<p>Прилагам DN <strong>" + fullReferenceNumber + "</strong> и CMR за товаренето на <strong>" + salesorder.get("shipment_date").toString("dd.MM.yyyy") + "</strong>.</p>" + "<p>Изпращам и проформа и декларация – ако камионът минава през Сърбия.</p>" + "<p style='color: red;'><strong>Моля, обърнете внимание на шофьора, че тези 2 документа са само и единствено за митница и НЕ трябва да стигат до клиента!!!</strong></p>" + "<h3>Номерата на камиона са:</h3>" + "<p>Преди да се разпечатат DN и CMR-та проверете:</p>" + "<ul>" + "  <li>Описаните бр. изделия и килограми</li>" + "  <li>Дали подредбата в бланката на CMR-то отговаря на тази предоставена от спедитора, и ако има разминаване, да се коригира и тогава да се разпечата.</li>" + "</ul>" + "<p><strong>Моля за писмено потвърждение за получаване.</strong></p>" + "<br>" + "<p>Поздрави,</p>" + "<p><strong>Чавдар Димитров</strong><br>" + "Главен оперативен директор<br>" + "m: (+359) 885 810 921<br>" + "w: <a href='https://dfd-group.com'>dfd-group.com</a> | e: <a href='mailto:chavdar@dfd-group.com'>chavdar@dfd-group.com</a></p>" + "</body>" + "</html>";
+mailSubject = "Delivery-note" + "-" + fullReferenceNumber + "-" + "(" + customerName + "-" + salesOrderNumber + ")-" + formattedSalesOrderShipmentDate;
+sendmail
+[
+	from :zoho.adminuserid
+	to :"office@dfd-group.com"
+	subject :mailSubject
+	message :messageToFactory
+]

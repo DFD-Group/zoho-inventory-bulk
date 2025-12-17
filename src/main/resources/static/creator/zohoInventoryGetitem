@@ -1,0 +1,186 @@
+map ZohoInventory.GetOrCreateItem(bigint recordID)
+{
+	result = Map();
+	organization_id = "20071872645";
+	order = new_order_form[ID == recordID];
+	sku = order.sku_field;
+	diameter = order.diameter_field;
+	stickersCount = order.stickers_count_field;
+	stickersType = order.stickers_type_field;
+	nrstStickersColor = " " + order.nrst_stickers_color_field;
+	rstStickersColor = " " + order.rst_stickers_color_field;
+	if(order.nrst_stickers_color_field == null)
+	{
+		nrstStickersColor = "";
+	}
+	if(order.rst_stickers_color_field == null)
+	{
+		rstStickersColor = "";
+	}
+	barrierType = order.barrier_type_field;
+	plateSize = order.plate_size_field;
+	plateSign = order.plate_sign_field;
+	ral = order.barrier_ral_field;
+	price = order.unit_price_field;
+	separator = " | ";
+	response = invokeurl
+	[
+		url :"https://www.zohoapis.eu/inventory/v1/items?search_text=" + barrierType + " " + plateSize + " " + plateSign + "&page=1&per_page=10&organization_id=" + organization_id
+		type :GET
+		connection:"zoho_oauth_connection"
+	];
+	itemsList = response.get("items");
+	// Search for Item with specific diameter, plate name, plate size and color (ral)
+	for each  item in itemsList
+	{
+		nameBTPKDesc = "";
+		if(sku.contains("BTPK"))
+		{
+			nameBTPKDesc = " KUBE";
+		}
+		space = " ";
+		barrierName = "Barrier".concat(nameBTPKDesc).concat(" D").concat(diameter).concat(separator).concat(stickersCount).concat(nrstStickersColor).concat(rstStickersColor).concat(space).concat(stickersType).concat(separator).concat(barrierType).concat(space).concat(plateSize).concat(space).concat(plateSign).concat(separator).concat("RAL ").concat(ral);
+		itemName = item.get("name");
+		isKrommBrand = item.get("brand").containsIgnoreCase("Kromm");
+		if(barrierName.equalsIgnoreCase(itemName) && isKrommBrand)
+		{
+			result.put("itemName",itemName);
+			result.put("message","Продуктът съществуваше");
+			result.put("sku",item.get("sku"));
+			result.put("bgDescription",item.get("purchase_description"));
+			itemUrl = "https://inventory.zoho.eu/app/" + organization_id + "#/inventory/items/" + item.get("item_id");
+			result.put("itemUrl",itemUrl);
+		}
+	}
+	if(result.size() < 1)
+	{
+		nameBTPKDesc = "";
+		if(sku.contains("BTPK"))
+		{
+			nameBTPKDesc = " KUBE";
+		}
+		space = " ";
+		// https://www.zoho.com/inventory/api/v1/items/#create-an-item
+		barrierName = "Barrier".concat(nameBTPKDesc).concat(" D").concat(diameter).concat(separator).concat(stickersCount).concat(nrstStickersColor).concat(rstStickersColor).concat(space).concat(stickersType).concat(separator).concat(barrierType).concat(space).concat(plateSize).concat(space).concat(plateSign).concat(separator).concat("RAL ").concat(ral);
+		barrierSKU = plateSign.concat("-").concat(sku);
+		unit = "pcs";
+		weight = "6.5";
+		is25Diam = diameter.equalsIgnoreCase("25");
+		is28Diam = diameter.equalsIgnoreCase("28");
+		isSmallPlate = plateSize.contains("166") || plateSize.containsIgnoreCase("245");
+		isBigPlate = plateSize.contains("333") && !plateSize.contains("166");
+		isBTPK = sku.contains("BTPK");
+		if(is25Diam && isSmallPlate)
+		{
+			weight = "6.2";
+		}
+		else if(is28Diam && isSmallPlate)
+		{
+			weight = "7";
+		}
+		else if(is28Diam && isBigPlate)
+		{
+			weight = "7.2";
+		}
+		else if(is25Diam && isBTPK)
+		{
+			weight = "4.8";
+		}
+		else if(is25Diam && isBTPK)
+		{
+			weight = "5.3";
+		}
+		Brand = "Kromm Group";
+		MPN = barrierSKU;
+		rate = price;
+		bgRate = price.toDecimal() * 1.95583;
+		BTPKDesc = "";
+		if(sku.contains("BTPK"))
+		{
+			BTPKDesc = " KUBE";
+		}
+		description = "Barriere".concat(" ø").concat(diameter).concat(BTPKDesc).concat(", ").concat(stickersCount).concat(nrstStickersColor).concat(rstStickersColor).concat(space).concat(stickersType).concat(", ").concat("RAL ").concat(ral).concat("\n").concat(barrierType).concat(" ").concat(plateSize).concat(" \"").concat(plateSign).concat("\"");
+		bgStickersType = "НРС";
+		if(stickersType.equalsIgnoreCase("RST"))
+		{
+			bgStickersType = "РС";
+		}
+		bgBarrierType = "ЛП";
+		if(barrierType.equalsIgnoreCase("PL"))
+		{
+			bgBarrierType = "ОП";
+		}
+		bgBTPKDesc = "";
+		if(sku.contains("BTPK"))
+		{
+			bgBTPKDesc = " с ОГЪНАТИ КРАКА";
+		}
+		englishBgColorsMap = Map();
+		englishBgColorsMap.put("YELLOW","ЖЪЛТИ");
+		englishBgColorsMap.put("ORANGE","ОРАНЖЕВИ");
+		englishBgColorsMap.put("BLUE","СИНИ");
+		englishBgColorsMap.put("RED","ЧЕРВЕНИ");
+		englishBgColorsMap.put("GREEN","ЗЕЛЕНИ");
+		englishBgColorsMap.put("WHITE","БЕЛИ");
+		englishBgColorsMap.put("BROWN","КАФЯВИ");
+		englishBgColorsMap.put("BLACK","ЧЕРНИ");
+		englishBgColorsMap.put("GREY","СИВИ");
+		englishBgColorsMap.put("DARK","ТЪМНО");
+		englishBgColorsMap.put("VIOLET","ЛИЛАВИ");
+		englishBgColorsMap.put("PINK","РОЗОВИ");
+		for each  key in englishBgColorsMap.keys()
+		{
+			nrstStickersColor = nrstStickersColor.replaceFirst(key,englishBgColorsMap.get(key));
+			rstStickersColor = rstStickersColor.replaceFirst(key,englishBgColorsMap.get(key));
+		}
+		colorStickersMessage = "";
+		stickersAreColorful = !(nrstStickersColor + rstStickersColor).isEmpty();
+		if(stickersAreColorful)
+		{
+			colorStickersMessage = " - \nще се осигурят от ДФД Груп, \n";
+		}
+		bgDescription = "Бар.".concat(" ø").concat(diameter).concat("x1").concat(bgBTPKDesc).concat(", \n").concat(stickersCount).concat(nrstStickersColor).concat(rstStickersColor).concat(space).concat(bgStickersType).concat(" (15 см.)").concat(colorStickersMessage).concat(", RAL ").concat(ral).concat(",\n").concat(bgBarrierType).concat(space).concat(plateSize).concat(" \"").concat(plateSign).concat("\"");
+		itemMap = Map();
+		itemCustomFieldsList = List();
+		packageDetails = Map();
+		itemMap.put("name",barrierName);
+		itemMap.put("description",description);
+		itemMap.put("rate",rate);
+		itemMap.put("sku",barrierSKU);
+		itemMap.put("part_number",MPN);
+		opisanieMap = Map();
+		opisanieMap.put("api_name","cf_test");
+		opisanieMap.put("value",bgDescription);
+		itemCustomFieldsList.add(opisanieMap);
+		itemMap.put("custom_fields",itemCustomFieldsList);
+		itemMap.put("purchase_rate",bgRate);
+		itemMap.put("purchase_description",bgDescription);
+		itemMap.put("item_type","sales_and_purchases");
+		itemMap.put("product_type","goods");
+		itemMap.put("brand",Brand);
+		packageDetails.put("weight",weight);
+		itemMap.put("package_details",packageDetails);
+		itemMap.put("unit",unit);
+		jsonPayload = Map();
+		jsonPayload.put("JSONString",itemMap);
+		headers = Map();
+		headers.put("Content-Type","application/json");
+		// If such a item does not exist, a new one is created
+		response = invokeurl
+		[
+			url :"https://www.zohoapis.eu/inventory/v1/items?organization_id=" + organization_id
+			type :POST
+			parameters:jsonPayload
+			headers:headers
+			connection:"zoho_oauth_connection"
+		];
+		createdItem = response.get("item");
+		result.put("itemName",barrierName);
+		result.put("message","Продуктът НЕ съществуваше и беше създаден.");
+		result.put("sku",createdItem.get("sku"));
+		result.put("bgDescription",bgDescription);
+		itemUrl = "https://inventory.zoho.eu/app/" + organization_id + "#/inventory/items/" + createdItem.get("item_id");
+		result.put("itemUrl",itemUrl);
+	}
+	return result;
+}

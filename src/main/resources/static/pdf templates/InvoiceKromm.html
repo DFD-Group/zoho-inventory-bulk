@@ -1,0 +1,162 @@
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title></title>
+<table style="width: 100%; border-collapse: collapse;">
+    <tbody>
+    <tr>
+        <!-- Company Details (Left Side) -->
+        <td style="font-family: Calibri; font-size: 12px; vertical-align: top; padding: 8px; padding-left: 0; width: 50%;">
+            <p>
+                %ScaledLogoImage%<br>
+                <b><span style="font-size: 14px;">%CompanyName%</span></b><br>
+                <span style="white-space: pre-wrap;">%CompanyCity% %CompanyState% %CompanyPostalCode%</span><br>
+                <span style="white-space: pre-wrap;">%CompanyStreetAddress1%</span><br>
+                <span style="white-space: pre-wrap;">%CompanyCountry%</span><br>
+                203 764 329<br>
+                BG 203 764 329
+            </p>
+        </td>
+        <!-- Invoice Number & Date (Right Side) -->
+        <td style="width: 50%; text-align: right; vertical-align: top; padding: 8px; padding-right: 0; white-space: no-wrap; ">
+            <div style="display: inline-block; text-align: right; margin: 0;">
+                <span style="font-size: 48px; color: rgb(0, 0, 0); font-family: Calibri;">INVOICE</span><br>
+                <span style="font-size: 16px; color: rgb(129, 125, 125); font-family: Calibri;"><b>%InvoiceNumber%</b></span><br>
+                <span style="font-size: 16px; color: rgb(129, 125, 125); font-family: Calibri;"><b>%InvoiceDate%</b></span>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<table style="width: 100%; border-collapse: collapse;">
+    <tbody>
+    <tr>
+        <!-- Invoice Address (Left Side) -->
+        <td style="font-family: Calibri; font-size: 12px; vertical-align: top; padding: 8px; padding-left: 0; width: 45%;">
+            <label class="label-title" style="font-size: 10pt; color: #817d7d; font-weight: bold;">
+                Invoice address:
+            </label><br>
+            <b>%CustomerBAttention%</b><br>
+            <span style="white-space: pre-wrap;">%CustomerBAddress%</span>,<br>
+            <span style="white-space: pre-wrap;">%CustomerBCity%</span><br>
+            <span style="white-space: pre-wrap; font-size: 12px;">%CustomerBCountry%</span><br>
+            <span style="font-weight: bold;">№TVA: </span>${contact.cf_tva}
+        </td>
+
+        <!-- Empty Spacer Column -->
+        <td style="width: 10%;"></td>
+
+        <!-- Delivery Address (Right Side, but Text Left-Aligned) -->
+        <td style="font-family: Calibri; font-size: 12px; vertical-align: top; padding: 8px; padding-right: 0px; width: 45%; text-align: right;">
+            <div style="display: inline-block; text-align: left;">
+                <label class="label-title" style="font-size: 10pt; color: #817d7d; font-weight: bold;">
+                    Delivery address:
+                </label><br>
+                <b>%CustomerSAttention%</b><br>
+                <span style="white-space: pre-wrap;">%CustomerSAddress%</span><br>
+                <span style="white-space: pre-wrap;">%CustomerSCity%, %CustomerSState%</span><br>
+                <span style="white-space: pre-wrap; font-size: 12px;">%CustomerSCountry%</span>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<table border="0" cellpadding="1" cellspacing="1" style="width: 100%;">
+    <tbody>
+    <tr>
+        <td><span style="font-family: Calibri;"><span style="font-size: 12px;">Your order: %P.O.Number%</span></span>
+        </td>
+        <td>&nbsp;</td>
+        <td align="right"><span style="font-family: Calibri;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><br></span>
+            <span style="font-family: Calibri;"></span></td>
+    </tr>
+    </tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="pcs-itemtable"
+       style="width: 100%; margin-top: 20px; table-layout: fixed; border-spacing: 0px; border-collapse: collapse; height: 52px;">
+    <thead>
+    <tr style="height: 32px;">
+        <td style="font-size: 8pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px; overflow-wrap: break-word; width: 3.25328%; height: 21px;">
+            <span style="font-family: Calibri;">No</span></td>
+        <td style="font-size: 8pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px; overflow-wrap: break-word; width: 15%; height: 21px;">
+            <span style="font-family: Calibri;">Item</span></td>
+        <td style="font-size: 8pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px; overflow-wrap: break-word; width: 32.3726%; height: 21px;">
+            <span style="font-family: Calibri;">&nbsp;Description</span></td>
+        <td style="font-size: 8pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px; overflow-wrap: break-word; width: 11.1208%; height: 21px;">
+            <span style="font-family: Calibri;">Order number<br></span></td>
+        <td style="font-size: 8pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px 5px 5px; overflow-wrap: break-word; width: 9.70888%; text-align: center; height: 21px;">
+            <span style="font-family: Calibri;">Q-ty</span></td>
+        <td style="font-size: 8pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px 5px 5px; overflow-wrap: break-word; width: 8.5444%; text-align: center; height: 21px;">
+            <span style="font-family: Calibri;">EUR / pc</span></td>
+        <td style="font-size: 8pt; color: #ffffff; background-color: #3c3d3a; padding: 5px 10px 5px 5px; overflow-wrap: break-word; width: 10%; text-align: center; height: 21px;">
+            <span style="font-family: Calibri;">Value</span></td>
+    </tr>
+    </thead>
+    <tbody id="lineitem">
+    <tr style="height: 31px;">
+        <td valign="top"
+            style="font-size: 7pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 0px 10px 10px; width: 3.25328%; height: 31px;">
+            <span style="font-family: Calibri;"><span style="font-size: 12px;">&nbsp;<span class="siq-user-message">%SiNo%</span></span></span>
+        </td>
+        <td valign="top"
+            style="font-size: 7pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 0px 10px 10px; width: 15%; height: 31px;">
+            <span style="font-family: Calibri;"><span style="font-size: 12px;">%MPN%</span></span></td>
+        <td valign="top"
+            style="font-size: 7pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 0px 10px 10px; width: 32.3726%; height: 31px;">
+            <span style="font-family: Calibri;"><span style="font-size: 12px;"><span id="tmp_item_description"
+                                                                                     style="white-space: pre-wrap; overflow-wrap: break-word;">%ItemDescription%</span></span></span>
+        </td>
+        <td style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(227, 227, 227); background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); padding: 10px 0px 10px 10px; width: 11.1208%; height: 31px;">
+            <font face="Calibri" size="2">${INVOICE.Item.CF.Customer order #.Value}</font></td>
+        <td valign="top"
+            style="font-size: 7pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 10px 5px; overflow-wrap: break-word; text-align: center; width: 9.70888%; height: 31px;">
+            <span style="font-family: Calibri;"><span style="font-size: 12px;"><span id="tmp_item_qty">%ItemQty%</span></span></span>
+        </td>
+        <td valign="top"
+            style="font-size: 7pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 10px 5px; overflow-wrap: break-word; text-align: center; width: 8.5444%; height: 31px;">
+            <span style="font-family: Calibri;"><span style="font-size: 12px;"><span
+                    id="tmp_item_rate">%ItemRate%</span></span></span></td>
+        <td valign="top"
+            style="font-size: 7pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 10px 10px 5px; overflow-wrap: break-word; text-align: center; width: 10%; height: 31px;">
+            <span style="font-family: Calibri;"><span style="font-size: 12px;">%ItemAmount%</span></span></td>
+    </tr>
+    </tbody>
+</table>
+<div style="width: 100%; margin-top: 1px;">
+    <div style="width: 45%; padding: 3px 10px 3px 3px; font-size: 9pt; float: left;">
+        <div style="white-space: pre-wrap;"><span style="font-family: Calibri;">&nbsp;</span></div>
+    </div>
+    <div style="width: 50%; float: right;">
+        <table border="0" cellspacing="0" width="100%"
+               style="font-size: 9pt; color: #000000; background-color: #ffffff; border-spacing: 0; border-collapse: collapse;">
+            <tbody id="taxItems">
+            <tr style="height: 10px;">
+                <td align="right" valign="middle" style="padding: 5px 10px 5px 0;"><span
+                        style="font-family: Calibri;"><span style="font-size: 12px;">%TaxName%</span></span></td>
+                <td align="right" valign="middle" style="width: 120px; padding: 10px 10px 10px 5px;"><span
+                        style="font-family: Calibri;"><span style="font-size: 12px;">%TaxValue%</span></span></td>
+            </tr>
+            </tbody>
+            <tbody>
+            <tr style="height: 40px; background-color: #f5f4f3; font-size: 9pt; color: #000000;">
+                <td align="right" valign="middle" style="padding: 5px 10px 5px 0;"><span
+                        style="font-family: Calibri;"><span
+                        style="font-size: 14px;"><strong>Total value, EUR netto:</strong></span></span></td>
+                <td align="right" valign="middle" id="tmp_balance_due"
+                    style="width: 120px; padding: 10px 10px 10px 5px;"><span style="font-family: Calibri;"><strong><span
+                        style="font-size: 14px;">%InvoiceSubTotal%</span></strong></span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div style="clear: both; margin-top: 50px; width: 100%;"><p
+        style="margin-top: 7px; white-space: pre-wrap; overflow-wrap: break-word;"><span
+        style="font-size: 8pt; font-family: Calibri;">&nbsp;<span style="font-size: 12px;"><em><label
+        id="tmp_terms_label" style="font-size: 10pt; color: #817d7d;">Payment Terms &amp; Conditions</label><br>Due Date: %DueDate%<br><label
+        id="tmp_terms_label" style="font-size: 10pt; color: #817d7d;">Bank details: </label><br>Payable to:<strong> DFD GROUP Ltd.</strong><br></em></span></span><font
+        size="2" face="Calibri"><i>${contact.cf_bank}</i></font></p></div>
+<div style="clear: both; margin-top: 30px; width: 100%;"></div>
+
+
+
